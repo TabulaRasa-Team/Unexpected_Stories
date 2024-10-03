@@ -1,10 +1,10 @@
 import './App.css';
-import MainPage from './MainPage'
+import BusStop from './BusStop';
 
 function App() {
   return (
     <>
-    <MainPage/>
+    <BusStop/>
     </>
   );
 }
