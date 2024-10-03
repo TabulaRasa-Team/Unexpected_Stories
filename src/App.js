@@ -1,10 +1,10 @@
 import './App.css';
-import BusStop from './BusStop';
+import BusStopBackground from './BusStopBackground';
 
 function App() {
   return (
     <>
-    <BusStop/>
+    <BusStopBackground/>
     </>
   );
 }
