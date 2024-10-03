@@ -4,7 +4,7 @@ import './MainTitle.css'
 function MainPage(){
     return (
         <div>
-            <h1 className='title'>
+            <h1 className='Maintitle'>
                 어쩌다<br/>발견한<br/>이야기
             </h1>
             <span className='subtitle'>우리 동네를 스쳐 지나가는 사람들,<br/>

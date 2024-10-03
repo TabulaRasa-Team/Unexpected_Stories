@@ -32,3 +32,8 @@ li{
     margin: auto 0;
     padding-right: 0.5em;
 }
+
+.title{
+    color: white;
+    font-family: 'TheJamsil2light';
+}
