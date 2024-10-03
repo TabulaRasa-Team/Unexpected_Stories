@@ -6,3 +6,27 @@
     font-family: 'HakgyoansimByeolbichhaneulTTF-L';
     src: url('./AnyConv.com__Hakgyoansim Byeolbichhaneul TTF L.eot');
 }
+@font-face {
+    font-family: 'TheJamsil1Thin';
+    src: url('./AnyConv.com__The Jamsil OTF 1 Thin.eot');
+}
+@font-face {
+    font-family: 'TheJamsil2Light';
+    src: url('./AnyConv.com__The Jamsil OTF 2 Light.eot');
+}
+@font-face {
+    font-family: 'TheJamsil3Regular';
+    src: url('./AnyConv.com__The Jamsil OTF 3 Regular.eot');
+}
+@font-face {
+    font-family: 'TheJamsil4Medium';
+    src: url('./AnyConv.com__The Jamsil OTF 4 Medium.eot');
+}
+@font-face {
+    font-family: 'TheJamsil5Bold';
+    src: url('./AnyConv.com__The Jamsil OTF 5 Bold.eot');
+}
+@font-face {
+    font-family: 'TheJamsil6ExtraBold';
+    src: url('./AnyConv.com__The Jamsil OTF 6 ExtraBold.eot');
+}
