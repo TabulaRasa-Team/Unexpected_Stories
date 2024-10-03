@@ -1,5 +1,5 @@
 import React from 'react';
-import './BusStopBackground.css';
+import '../style/BusStopBackground.css';
 import MainTitle from './MainTitle';
 import ChoiceBusStop from './ChoiceBusStop';
 

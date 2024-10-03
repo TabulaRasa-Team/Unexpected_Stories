@@ -1,5 +1,5 @@
 import React from 'react';
-import './ListBusStop.css';
+import '../style/ListBusStop.css';
 
 function ListBusStop({ BusStop }) {
     return (

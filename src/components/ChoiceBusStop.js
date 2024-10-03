@@ -1,7 +1,6 @@
 import React from 'react';
-import './ListBusStop';
 import ListBusStop from './ListBusStop';
-import './ChoiceBusStop.css';
+import '../style/ChoiceBusStop.css';
 
 
 function ChoiceBusStop(){
