@@ -1,0 +1,34 @@
+*{
+    margin:0;
+    padding:0;
+}
+.busStop{
+    background-color: #ffffff33;
+    border-radius: 0.5em;
+    padding:3.5%;
+    display: flex;
+    justify-content: space-between;
+}
+.busStop span{
+    color: white;
+    font-family: 'TheJamsil2light';
+}
+ul{
+    list-style: none;
+    width: 85%;
+    margin:0 auto;
+}
+
+li{
+    margin-top: 1.5em;
+}
+
+.info{
+    font-size: x-small;
+}
+
+.distance{
+    display: block;
+    margin: auto 0;
+    padding-right: 0.5em;
+}
