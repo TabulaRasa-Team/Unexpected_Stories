@@ -1,7 +1,9 @@
+@import url(./Font.css);
+
 .nightsky-bold{
-    font-family: 'HakgyoansimByeolbichhaneulTTF-B';
+    font-family: '별빛하늘B';
 }
 
 .nightsky-light{
-    font-family: 'HakgyoansimByeolbichhaneulTTF-L';
+    font-family: '별빛하늘L';
 }

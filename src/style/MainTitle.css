@@ -1,4 +1,4 @@
-
+@import url(./Font.css);
 
 .Maintitle{
     width:fit-content;
@@ -9,7 +9,7 @@
     font-size: 3.2rem;
     font-weight:300;
     letter-spacing: 0.1rem;
-    font-family: 'HakgyoansimByeolbichhaneulTTF-L';
+    font-family: '별빛하늘L';
 }
 
 .subtitle{
@@ -17,7 +17,7 @@
     text-align: center;
     margin: 2em 0;
     color: white;
-    font-family: 'TheJamsil1Thin';
+    font-family: '더잠실1';
     font-size: large;
     opacity: 65%;
 }
@@ -32,6 +32,6 @@
     border:none;
 }
 .startBtn span{
-    font-family: 'TheJamsil1Thin';
+    font-family: '더잠실1';
     font-size: x-large;
 }
