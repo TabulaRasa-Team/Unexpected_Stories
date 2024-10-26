@@ -1,0 +1,16 @@
+.WriteBackground {
+    height:100%;
+    width: 100%;
+    background: url('../images/starBackground.png') no-repeat center;
+    background-size: 120% 120%;
+    height:100vh;
+    width: 100vw;
+    max-width: 430px;
+    max-height: 932px;
+    overflow: hidden;
+}
+
+.back {
+    margin-top : 4vh;
+    margin-left : 4vw;
+}

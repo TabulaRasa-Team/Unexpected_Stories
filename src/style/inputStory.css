@@ -1,0 +1,32 @@
+.inputContainer {
+    display : flex;
+    flex-direction : column;
+    gap : 3%;
+    box-sizing : border-box;
+    width : 80vw;
+    height : 66vh;
+    margin : 4% auto;
+    background-color : #FFFFFF4D;
+    border-radius : 1em;
+    padding : 6% 6%;
+}
+
+.inputTitle {
+    border : none;
+    background-color: transparent;
+    font-size : 1.4em;
+    color: rgba(255, 255, 255, 0.60);
+    font-weight: 700;
+    font-family: "The Jamsil";
+}
+
+.inputContent {
+    width : 100%;
+    height : 100%;
+    border : none;
+    background-color: transparent;
+    font-size : 0.9em;
+    color: rgba(255, 255, 255, 0.60);
+    font-weight: 400;
+    font-family: "The Jamsil";
+}
