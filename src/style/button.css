@@ -1,0 +1,10 @@
+button {
+    width : 60vw;
+    height : 7.8vh;
+    color : black;
+    background-color: #FFFFFFCC;
+    border-radius : 1.8em;
+    font-size : 1.15em;
+    margin : 5vh auto;
+    display : block;
+}
