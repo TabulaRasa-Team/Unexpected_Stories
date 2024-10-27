@@ -1,7 +1,7 @@
 .inputContainer {
     display : flex;
     flex-direction : column;
-    gap : 3%;
+    gap : 4%;
     box-sizing : border-box;
     width : 80vw;
     height : 66vh;

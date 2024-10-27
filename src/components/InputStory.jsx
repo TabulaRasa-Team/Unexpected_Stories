@@ -7,7 +7,7 @@ const InputStory = () => {
             <input
                 className="inputTitle" 
                 type="text" 
-                placeholder="제목"
+                placeholder="제목.."
             />
             <hr/>
             <textarea
