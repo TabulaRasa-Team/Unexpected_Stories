@@ -13,8 +13,7 @@ const InputStory = () => {
             <textarea
                 className="inputContent"
                 type="text" 
-                placeholder="자유롭게 자신의 이야기를 공유해봐요.           
-                아무 이야기나 괜찮아요!"
+                placeholder="자유롭게 자신의 이야기를 공유해봐요.&#13;&#10;아무 이야기나 괜찮아요!"
             />
         </div>
     )
