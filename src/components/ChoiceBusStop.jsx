@@ -38,7 +38,7 @@ function ChoiceBusStop() {
                     <ListBusStop BusStop={item} key={item.id} />
                 ))}
             </ul>
-            <Link to="/ChoiceBusStop" style={{ textDecoration: "none" }}>
+            <Link to="/ChoiceBusStop" style={{ textDecoration: "none" }} >
                 <button className='reload'>새로고침</button>
             </Link>
         </div>

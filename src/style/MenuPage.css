@@ -1,0 +1,52 @@
+@import './Font.css';
+
+.BackgroundContainer{
+    position:fixed;
+    height:100vh;
+    width: 100vw;
+    max-width: 430px;
+    max-height: 932px;
+    overflow: hidden;
+    background-color: #05091099;
+    backdrop-filter: blur(6px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.MainTitle{
+    margin-top:2.5em;
+    text-align: center;
+    color:white;
+    font-family: '별빛하늘L';
+    font-weight: 100;
+    font-size: 2.3em;
+}
+
+.paperPlane{
+    display: block;
+    margin: 4em auto 2em auto;
+}
+
+.busStop2{
+    width: 80%;
+    margin:0 auto;
+}
+
+.menuBtn{
+    display: block;
+    margin: 0 auto;
+    background-color:#ffffff4d;
+    border:none;
+    color: white;
+    font-family: '더잠실2';
+    width: 90%;
+    height: 3.5em;
+    margin-top: 1em;
+    font-size: 1.3em;
+    border-radius: 1.2em;
+}
+
+.content{
+    margin-bottom: 10em;
+}
