@@ -14,7 +14,7 @@ const MenuPage = () => {
             <h1 className='MainTitle'>어쩌다 발견한 이야기</h1>
             <img src={paperPlane} className='paperPlane' />
             <div className='content'>
-                <Link to="../ChoiceBusStop">
+                <Link to="../ChoiceBusStop" style={{ textDecoration: "none"}}>
                     <div className='busStop busStop2'>
                         <div>
                             <span>{data.name}</span><br />
@@ -24,7 +24,7 @@ const MenuPage = () => {
                     </div>
                 </Link>
                 <button className='menuBtn'>편지 읽기</button>
-                <Link to="../WriteStory" state={{name:data.name,num:data.num,toWhere:data.toWhere,distance:data.distance}}>
+                <Link to="../WriteStory" state={{name:data.name,num:data.num,toWhere:data.toWhere,distance:data.distance}} style={{ textDecoration: "none"}}>
                     <button className='menuBtn'>편지 쓰기</button>
                 </Link>
                 <button className='menuBtn'>마이 페이지</button>

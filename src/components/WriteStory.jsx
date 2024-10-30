@@ -12,7 +12,7 @@ const WriteStory = () => {
     console.log(data)
     return (
         <div className="WriteBackground">
-            <Link to='../MenuPage' state={{name:data.name,num:data.num,towhere:data.toWhere,distance:data.distance}}>
+            <Link to='../MenuPage' state={{name:data.name,num:data.num,towhere:data.toWhere,distance:data.distance}} style={{ textDecoration: "none"}}>
             <img src={backIcon} alt="back" className="back"/>
             </Link>
             <InputStory />
