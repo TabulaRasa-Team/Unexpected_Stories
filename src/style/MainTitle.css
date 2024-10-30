@@ -4,12 +4,17 @@
     width:fit-content;
     height: fit-content;
     text-align: center;
-    margin:30% auto 0 auto;
+    margin:25% auto 0 auto;
     color:white;
     font-size: 3.2rem;
     font-weight:300;
     letter-spacing: 0.1rem;
     font-family: '별빛하늘L';
+}
+@media screen and (min-height:820px){
+    .Maintitle{
+        margin: 32% auto 0 auto;
+    }
 }
 
 .subtitle{
@@ -24,9 +29,9 @@
 
 .startBtn{
     display: block;
-    width: 16em;
-    height: 3.5em;
-    margin: 4em auto;
+    width: 15em;
+    height: 3.3em;
+    margin: 3em auto;
     border-radius: 2em;
     opacity: 65%;
     border:none;
