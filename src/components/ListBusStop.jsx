@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function ListBusStop({ BusStop }) {
     return (
-        <Link to="/MenuPage" state={{name:BusStop.name,num:BusStop.num,towhere:BusStop.toWhere,distance:BusStop.distance}}>
+        <Link to="/MenuPage" state={{name:BusStop.name,num:BusStop.num,toWhere:BusStop.toWhere,distance:BusStop.distance}}>
             <li>
                 <div className='busStop'>
                     <div>

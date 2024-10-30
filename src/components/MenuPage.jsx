@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import '../style/MenuPage.css'
 import paperPlane from '../images/paperPlane.svg'
@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 const MenuPage = () => {
     const location = useLocation();
     const data = location.state;
+    console.log(data);
 
     return (
         <div className='BackgroundContainer'>
@@ -23,7 +24,7 @@ const MenuPage = () => {
                     </div>
                 </Link>
                 <button className='menuBtn'>편지 읽기</button>
-                <Link to="../WriteStory">
+                <Link to="../WriteStory" state={{name:data.name,num:data.num,toWhere:data.toWhere,distance:data.distance}}>
                     <button className='menuBtn'>편지 쓰기</button>
                 </Link>
                 <button className='menuBtn'>마이 페이지</button>
