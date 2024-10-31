@@ -1,0 +1,13 @@
+.MyPageMainTitle{
+    margin-top:2.5em;
+    text-align: center;
+    color:white;
+    font-family: '별빛하늘L';
+    font-weight: 100;
+    font-size: 2.3em;
+}
+
+.PostList{
+    width: 100%;
+    height: 60%;
+}

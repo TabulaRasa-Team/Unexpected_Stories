@@ -1,14 +1,11 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import MyPage from './MyPage';
 import '../style/MyPageBackground.css'
+import { Outlet } from 'react-router-dom'
 
 const MyPageBackground = () => {
     return (
         <div className='MyPageBackImg'>
-            <Routes>
-                <Route path='./MyPage' element={<MyPage />} />
-            </Routes>
+            <Outlet />
         </div>
     )
 };

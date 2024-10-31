@@ -3,7 +3,6 @@ import ListBusStop from './ListBusStop';
 import '../style/ChoiceBusStop.css';
 import { Link } from 'react-router-dom';
 
-
 function ChoiceBusStop() {
     let BusStopDummy = [
         {
