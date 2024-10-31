@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import React from 'react';
 import '../style/MyPage.css';
 import Post from './Post';
 import Button from './Button'
