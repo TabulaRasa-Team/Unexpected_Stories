@@ -1,0 +1,71 @@
+@import './Font.css';
+
+li {
+    color: white;
+}
+
+.date {
+    margin-right: 5%;
+    text-align: end;
+    font-family: "더잠실2";
+    color:#BBBBBB;
+    font-size: 0.9em;
+}
+
+.article {
+    display: flex;
+    margin: 0.5em auto 1em auto;
+    width: 85%;
+    background-color: #ffffff2f;
+    height: 4em;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding-left:0.8em;
+    align-items: center;
+}
+
+.content{
+    font-family: "더잠실2";
+    display: inline-block; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+    width: 98%;
+    height: 20px;
+    font-size: 0.8em;
+    margin-left: 0.8em;
+}
+
+.articleFront{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    font-size: 0.9em;
+}
+
+.articleBack{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap:0.3em;
+    width: 50%;
+    height: 100%;
+    font-size: 0.8em;
+    margin-right: 1em;
+}
+
+.articleTitle{
+    font-family: "더잠실3";
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+}
+
+.articleItem{
+    display: flex;
+    text-align: center;
+    align-items: center;
+}

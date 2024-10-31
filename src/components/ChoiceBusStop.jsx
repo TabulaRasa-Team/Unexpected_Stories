@@ -3,7 +3,6 @@ import ListBusStop from './ListBusStop';
 import '../style/ChoiceBusStop.css';
 import { Link } from 'react-router-dom';
 
-
 function ChoiceBusStop() {
     let BusStopDummy = [
         {
@@ -38,7 +37,7 @@ function ChoiceBusStop() {
                     <ListBusStop BusStop={item} key={item.id} />
                 ))}
             </ul>
-            <Link to="/ChoiceBusStop" style={{ textDecoration: "none" }}>
+            <Link to="/ChoiceBusStop" style={{ textDecoration: "none" }} >
                 <button className='reload'>새로고침</button>
             </Link>
         </div>

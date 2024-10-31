@@ -1,10 +1,11 @@
-button {
-    width : 60vw;
-    height : 7.8vh;
+.Button {
+    width : 16em;
+    height : 3.7em;
     color : black;
-    background-color: #FFFFFFCC;
-    border-radius : 1.8em;
+    background-color: #ffffffb8;
+    border-radius : 3em;
     font-size : 1.15em;
-    margin : 5vh auto;
+    margin : 2.7em auto;
     display : block;
+    margin-bottom: 5em;
 }

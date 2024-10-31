@@ -4,19 +4,23 @@
     width:fit-content;
     height: fit-content;
     text-align: center;
-    margin : 0 auto;
-    margin-top : 18%;
+    margin:25% auto 0 auto;
     color:white;
     font-size: 3.2rem;
     font-weight:300;
     letter-spacing: 0.1rem;
     font-family: '별빛하늘L';
 }
+@media screen and (min-height:820px){
+    .Maintitle{
+        margin: 32% auto 0 auto;
+    }
+}
 
 .subtitle{
     display: block;
     text-align: center;
-    margin: 10% 0;
+    margin: 2em 0;
     color: white;
     font-family: '더잠실1';
     font-size: large;
@@ -25,14 +29,15 @@
 
 .startBtn{
     display: block;
-    width: 60vw;
-    height: 7vh;
-    margin: 4vh auto;
+    width: 15em;
+    height: 3.3em;
+    margin: 3em auto;
     border-radius: 2em;
     opacity: 65%;
     border:none;
 }
 .startBtn span{
     font-family: '더잠실1';
-    font-size: x-large;
+    font-size: 1.5em;
+    color:#2f6e85;
 }
