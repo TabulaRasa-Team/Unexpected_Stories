@@ -29,12 +29,13 @@
 
 .startBtn{
     display: block;
-    width: 15em;
-    height: 3.3em;
-    margin: 3em auto;
+    width: 14em;
+    height: 3em;
+    margin: 2em auto;
     border-radius: 2em;
     opacity: 65%;
     border:none;
+    font-size : 0.8em;
 }
 .startBtn span{
     font-family: '더잠실1';
