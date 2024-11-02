@@ -60,9 +60,11 @@ function MyPage() {
                 )
                 )}
             </ul>
-            <Link to='../../MenuPage' state={{name:data.name,num:data.num,toWhere:data.toWhere,distance:data.distance}} style={{ textDecoration: "none"}}>
-                <Button content={"뒤로가기"} />
-            </Link>
+            <div className="buttonContainer">
+                <Link to='../../MenuPage' state={{name:data.name,num:data.num,toWhere:data.toWhere,distance:data.distance}} style={{ textDecoration: "none"}}>
+                    <Button content={"뒤로가기"} />
+                </Link>
+            </div>
         </>
     )
 }
