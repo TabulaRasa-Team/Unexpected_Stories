@@ -1,6 +1,6 @@
 .buttonContainer {
     position: fixed;
-    bottom: 2em;
+    bottom: 2vh;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
