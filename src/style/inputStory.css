@@ -3,12 +3,20 @@
     flex-direction : column;
     gap : 4%;
     box-sizing : border-box;
-    width : 22em;
+    width : 20em;
     height : 66vh;
     margin : 4% auto;
     background-color : #FFFFFF4D;
     border-radius : 1em;
     padding : 6% 6%;
+}
+
+.inputContainer > input {
+    outline : none;
+}
+
+.inputContainer > textarea {
+    outline : none;
 }
 
 .inputTitle {
