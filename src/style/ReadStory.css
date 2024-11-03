@@ -12,3 +12,14 @@
     -webkit-overflow-scrolling: touch;
     z-index: 99999999;
 }
+
+.emojis{
+    margin:4% auto;
+    justify-content: center;
+    gap: 2.7em;
+    display: flex;
+}
+
+.emojis > img{
+    display: block;
+}
