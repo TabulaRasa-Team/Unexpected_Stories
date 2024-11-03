@@ -1,0 +1,26 @@
+.bg-container{
+    position:absolute;
+    height:100vh;
+    width: 100vw;
+    margin-top: 21%;
+    max-width: 430px;
+    max-height: 932px;
+    overflow: hidden;
+    background-color: #05091099;
+    backdrop-filter: blur(6px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    z-index: 99999999;
+}
+
+.emojis{
+    margin:4% auto 0 auto;
+    justify-content: center;
+    gap: 2.7em;
+    display: flex;
+}
+
+.emojis > img{
+    display: block;
+}

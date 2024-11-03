@@ -23,7 +23,9 @@ const MenuPage = () => {
                         <span className='distance'>{data.distance}M</span>
                     </div>
                 </Link>
-                <button className='menuBtn'>편지 읽기</button>
+                <Link to="../ReadStoryBackground" state={{ name: data.name, num: data.num, toWhere: data.toWhere, distance: data.distance }} style={{ textDecoration: "none" }}>
+                    <button className='menuBtn'>편지 읽기</button>
+                </Link>
                 <Link to="../WriteStory" state={{ name: data.name, num: data.num, toWhere: data.toWhere, distance: data.distance }} style={{ textDecoration: "none" }}>
                     <button className='menuBtn'>편지 쓰기</button>
                 </Link>
