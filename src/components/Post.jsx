@@ -53,7 +53,7 @@ const Post = ({data, isSelected, selectedId, onClick}, key) => {
     return (
         <li ref={position} onClick={onClick} style={cssEffectStyle}>
             <div>
-                {!selectedId && <h3 className='date' >{data.date}</h3>}
+                {!selectedId && <h3 className='date' >{data.date.slice(2, 4)}년 {data.date.slice(5, 7)}월 {data.date.slice(8, 10)}일</h3>}
                 <div className='article'>
                     <div className='articleFront'>
                         <h4 className='articleTitle'>{data.title}</h4>
