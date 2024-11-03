@@ -10,11 +10,8 @@ const Post = ({data, isSelected, selectedId, onClick}, key) => {
         opacity: opacity,
         transition: 'opacity 0.1s'
     }
-
-
-    console.log(selectedId)
     
-    const IsOpacity = () => {
+    const cssEffect = () => {
         if(!selectedId) {
 
             const fadeOut = setInterval(() => {
@@ -28,12 +25,12 @@ const Post = ({data, isSelected, selectedId, onClick}, key) => {
                 })
             }, 70)
         } else {
-            setOpacity(1)
+            
         }
     }
 
     useEffect(() => {
-        if(isSelected) IsOpacity()
+        if(isSelected) cssEffect()
     }, [isSelected])
 
     return (
