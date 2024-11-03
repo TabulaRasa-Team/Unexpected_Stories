@@ -7,6 +7,7 @@ import ChoiceBusStop from './ChoiceBusStop';
 import MenuPage from './MenuPage';
 import MyPageBackground from './MyPageBackground';
 import MyPage from './MyPage';
+import ReadStoryBackground from './ReadStoryBackground';
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
           <Route path='/MenuPage' element={<MenuPage />} />
           <Route path='/MyPageBackground' element={<MyPageBackground />}>
             <Route path='MyPage' element={<MyPage />} />
+          </Route>
+          <Route path='/ReadStoryBackground' element={<ReadStoryBackground />}>
+
           </Route>
         </Routes>
       </BrowserRouter>
