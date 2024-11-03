@@ -40,8 +40,8 @@ const Post = ({data, isSelected, selectedId, onClick}, key) => {
                         return moveDistance
                     }
 
-                    return prev - 1
-                }, 100)
+                    return prev - 1.8
+                }, 10)
             })
         }
     }
