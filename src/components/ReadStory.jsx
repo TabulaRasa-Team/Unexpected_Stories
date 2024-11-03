@@ -1,11 +1,12 @@
 import React from 'react';
 import '../style/ReadStory.css'
+import ReadStoryPost from './ReadStoryPost'
 
-const ReadStory = ()=>{
+const ReadStory = () => {
     console.log("hello")
-    return(
+    return (
         <div className='bg-container'>
-            
+            <ReadStoryPost/>
         </div>
     )
 }
