@@ -7,17 +7,17 @@
     box-sizing : border-box;
     width : 20em;
     height : 66vh;
-    margin : 4% auto;
+    margin : 14% auto;
     background-color : #FFFFFF4D;
     border-radius : 1em;
-    padding : 6% 6%;
+    padding : 6% 6% 2%;
 }
 
 .readTitle {
     border : none;
     background-color: transparent;
     font-size : 1.4em;
-    color: #ffffff99;
+    color: #dadada;
     font-weight: 700;
     font-family: '더잠실5';
 }
@@ -28,7 +28,7 @@
     border : none;
     background-color: transparent;
     font-size : 0.9em;
-    color: #ffffff99;
+    color: #dadada;
     font-weight: 400;
     font-family: '더잠실3';
 }
@@ -36,18 +36,17 @@
 .readFooter{
     display: flex;
     justify-content: space-between;
-    text-align: center;
 }
 
 .readFooter > div > img{
-    margin-right: 0.5em;
+    margin-right: 0.8em;
 }
 
 .readFooter > h4{
     font-family: '더잠실4';
     position:relative;
     top:0.5em;
-    color: #ffffffab;
+    color: #dadada;
     font-size: 0.85em;
 }
 
