@@ -9,7 +9,7 @@ import { useLocation } from 'react-router-dom';
 const WriteStory = () => {
     const location = useLocation();
     const data = location.state;
-    console.log(data)
+    
     return (
         <div className="WriteBackground">
             <Link to='../MenuPage' state={{name:data.name,num:data.num,toWhere:data.toWhere,distance:data.distance}} style={{ textDecoration: "none"}}>

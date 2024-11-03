@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 const MenuPage = () => {
     const location = useLocation();
     const data = location.state;
-    console.log(data);
 
     return (
         <div className='BackgroundContainer'>

@@ -1,33 +1,75 @@
-import React from 'react';
+import {React, useState, useEffect, useRef} from 'react';
 import '../style/Post.css'
 import favorite from '../images/Favorite_light.svg'
 import view from '../images/Eye_light.svg'
 
+const Post = ({data, isSelected, selectedId, onClick}, key) => {
+    const [opacity, setOpacity] = useState(1)
+    const [move, setMove] = useState(0)
+    const position = useRef(0)
 
-const Post = (content, key) => {
-    let data = content.content
+    let cssEffectStyle = {
+        opacity: opacity,
+        transform: `translateY(${move}px)`
+    }
+
+    useEffect(() => {
+        console.log(move)
+    }, [move])
+    
+    const cssEffect = () => {
+        if(!selectedId) {
+            const fadeOut = setInterval(() => {
+                setOpacity((prev) => {
+                    if(prev <= 0) {
+                        clearInterval(fadeOut)
+                        return 0
+                    }
+
+                    return prev - 0.1
+                })
+            }, 40)
+        } else if(position.current) {
+            const coordinate_Y = position.current.getBoundingClientRect().top
+            const moveDistance = 50 - coordinate_Y
+
+            const moveUp = setInterval(() => {
+                setMove((prev) => {
+                    if(prev <= moveDistance) {
+                        clearInterval(moveUp)
+                        return moveDistance
+                    }
+
+                    return prev - 1.8
+                }, 10)
+            })
+        }
+    }
+
+    useEffect(() => {
+        if(isSelected) cssEffect()
+    }, [isSelected])
+
     return (
-        <>
-            <li>
-                <div>
-                    <h3 className='date'>{data.date}</h3>
-                    <div className='article'>
-                        <div className='articleFront'>
-                            <h4 className='articleTitle'>{data.title}</h4>
-                            <span className='content'>{data.content}</span>
+        <li ref={position} onClick={onClick} style={cssEffectStyle}>
+            <div>
+                {!selectedId && <h3 className='date' >{data.date}</h3>}
+                <div className='article'>
+                    <div className='articleFront'>
+                        <h4 className='articleTitle'>{data.title}</h4>
+                        <span className='content'>{data.content}</span>
+                    </div>
+                    <div className='articleBack'>
+                        <div className='articleItem'>
+                            <img src={favorite} alt="좋아요" /><div> {data.like}</div>
                         </div>
-                        <div className='articleBack'>
-                            <div className='articleItem'>
-                                <img src={favorite} alt="좋아요" /><div> {data.like}</div>
-                            </div>
-                            <div className='articleItem'>
-                                <img src={view} alt="조회수" /><div> {data.view}</div>
-                            </div>
+                        <div className='articleItem'>
+                            <img src={view} alt="조회수" /><div> {data.view}</div>
                         </div>
                     </div>
                 </div>
-            </li>
-        </>
+            </div>
+        </li>
     )
 }
 

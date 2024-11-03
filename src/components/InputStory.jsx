@@ -1,9 +1,39 @@
-import React from 'react'
+import {React, useState, useEffect} from 'react'
 import '../style/inputStory.css'
 
-const InputStory = () => {
+const InputStory = ({use, selected}) => {
+    const [opacity, setOpacity] = useState(0)
+
+    const cssEffect = () => {
+        const fadeOut = setInterval(() => {
+            setOpacity((prev) => {
+                if(prev >= 1) {
+                    clearInterval(fadeOut)
+                    return 1
+                }
+    
+                return prev + 0.1
+            })
+        }, 40)
+    }
+
+    useEffect(() => {
+        if(selected) cssEffect()
+    }, [selected]) 
+
+    let storyStyle = {
+        ...(use === 'modify' && {
+            marginTop : "-59vh",
+            width : "19em",
+            height : "60vh",
+            opacity : opacity,
+            position : "relative",
+            zIndex : "1000"
+        })
+    }
+
     return (
-        <div className="inputContainer">
+        <div className="inputContainer" style={storyStyle}>
             <input
                 className="inputTitle" 
                 type="text" 
