@@ -1,4 +1,4 @@
-import {React, useState} from 'react';
+import {React, useState, useEffect} from 'react';
 import '../style/MyPage.css';
 import Post from './Post';
 import Button from './Button'
@@ -38,9 +38,27 @@ function MyPage() {
         }
     ]
 
+    const [opacity, setOpacity] = useState(1)
+
+    const cssEffect = () => {
+        const fadeOut = setInterval(() => {
+            setOpacity((prev) => {
+                if(prev <= 0) {
+                    clearInterval(fadeOut)
+                    return 0
+                }
+    
+                return prev - 0.1
+            })
+        }, 40)
+    }
+
+    useEffect(() => {
+        if(selected) cssEffect()
+    }, [selected]) 
     return (
         <>
-            <h1 className='MyPageMainTitle'>내가 공유한 이야기</h1>
+            <h1 className='MyPageMainTitle' style={{opacity : opacity}}>내가 공유한 이야기</h1>
             <ul className='PostList'>
                 {dummyPost.map((item) => (
                     <Post 

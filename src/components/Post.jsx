@@ -1,19 +1,24 @@
-import {React, useState, useEffect} from 'react';
+import {React, useState, useEffect, useRef} from 'react';
 import '../style/Post.css'
 import favorite from '../images/Favorite_light.svg'
 import view from '../images/Eye_light.svg'
 
 const Post = ({data, isSelected, selectedId, onClick}, key) => {
     const [opacity, setOpacity] = useState(1)
+    const [move, setMove] = useState(0)
+    const position = useRef(0)
 
-    let opacityStyle = {
+    let cssEffectStyle = {
         opacity: opacity,
-        transition: 'opacity 0.1s'
+        transform: `translateY(${move}px)`
     }
+
+    useEffect(() => {
+        console.log(move)
+    }, [move])
     
     const cssEffect = () => {
         if(!selectedId) {
-
             const fadeOut = setInterval(() => {
                 setOpacity((prev) => {
                     if(prev <= 0) {
@@ -23,9 +28,21 @@ const Post = ({data, isSelected, selectedId, onClick}, key) => {
 
                     return prev - 0.1
                 })
-            }, 70)
-        } else {
-            
+            }, 40)
+        } else if(position.current) {
+            const coordinate_Y = position.current.getBoundingClientRect().top
+            const moveDistance = 50 - coordinate_Y
+
+            const moveUp = setInterval(() => {
+                setMove((prev) => {
+                    if(prev <= moveDistance) {
+                        clearInterval(moveUp)
+                        return moveDistance
+                    }
+
+                    return prev - 1
+                }, 100)
+            })
         }
     }
 
@@ -34,9 +51,9 @@ const Post = ({data, isSelected, selectedId, onClick}, key) => {
     }, [isSelected])
 
     return (
-        <li onClick={onClick} style={opacityStyle}>
+        <li ref={position} onClick={onClick} style={cssEffectStyle}>
             <div>
-                <h3 className='date'>{data.date}</h3>
+                {!selectedId && <h3 className='date' >{data.date}</h3>}
                 <div className='article'>
                     <div className='articleFront'>
                         <h4 className='articleTitle'>{data.title}</h4>
