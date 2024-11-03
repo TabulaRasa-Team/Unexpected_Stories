@@ -2,7 +2,6 @@
     position:absolute;
     height:100vh;
     width: 100vw;
-    margin-top: 21%;
     max-width: 430px;
     max-height: 932px;
     overflow: hidden;
@@ -15,7 +14,7 @@
 }
 
 .emojis{
-    margin:4% auto 0 auto;
+    margin-top : -4vh;
     justify-content: center;
     gap: 2.7em;
     display: flex;
