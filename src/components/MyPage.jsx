@@ -1,6 +1,7 @@
 import {React, useState, useEffect} from 'react';
 import '../style/MyPage.css';
 import Post from './Post';
+import InputStory from './InputStory'
 import Button from './Button'
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
@@ -73,6 +74,7 @@ function MyPage() {
                     />
                 ))}
             </ul>
+            {selected && <InputStory use={"modify"} selected={selected}/>}
             <div className="buttonContainer">
                 <Link to='../../MenuPage' state={{name:data.name,num:data.num,toWhere:data.toWhere,distance:data.distance}} style={{ textDecoration: "none"}}>
                     <Button content={"뒤로가기"} />
