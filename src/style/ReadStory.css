@@ -14,7 +14,7 @@
 }
 
 .emojis{
-    margin:4% auto;
+    margin:4% auto 0 auto;
     justify-content: center;
     gap: 2.7em;
     display: flex;
