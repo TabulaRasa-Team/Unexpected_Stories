@@ -1,7 +1,7 @@
 import {React, useState, useEffect} from 'react'
 import '../style/inputStory.css'
 
-const InputStory = ({use, selected}) => {
+const InputStory = ({use, selected, title, setTitle, content, setContent}) => {
     const [opacity, setOpacity] = useState(0)
 
     const cssEffect = () => {
@@ -38,12 +38,16 @@ const InputStory = ({use, selected}) => {
                 className="inputTitle" 
                 type="text" 
                 placeholder="제목.."
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
             />
             <hr/>
             <textarea
                 className="inputContent"
                 type="text" 
                 placeholder="자유롭게 자신의 이야기를 공유해봐요.&#13;&#10;아무 이야기나 괜찮아요!"
+                value={content}
+                onChange={(e) => setContent(e.target.value)}
             />
         </div>
     )
