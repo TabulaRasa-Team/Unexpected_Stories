@@ -1,13 +1,43 @@
-import React from 'react';
+import {React, useState, useEffect} from 'react';
 import '../style/Post.css'
 import favorite from '../images/Favorite_light.svg'
 import view from '../images/Eye_light.svg'
 
+const Post = ({data, isSelected, selectedId, onClick}, key) => {
+    const [opacity, setOpacity] = useState(1)
 
-const Post = (content, key) => {
-    let data = content.content
+    let opacityStyle = {
+        opacity: opacity,
+        transition: 'opacity 0.1s'
+    }
+
+
+    console.log(selectedId)
+    
+    const IsOpacity = () => {
+        if(!selectedId) {
+
+            const fadeOut = setInterval(() => {
+                setOpacity((prev) => {
+                    if(prev <= 0) {
+                        clearInterval(fadeOut)
+                        return 0
+                    }
+
+                    return prev - 0.1
+                })
+            }, 70)
+        } else {
+            setOpacity(1)
+        }
+    }
+
+    useEffect(() => {
+        if(isSelected) IsOpacity()
+    }, [isSelected])
+
     return (
-        <li>
+        <li onClick={onClick} style={opacityStyle}>
             <div>
                 <h3 className='date'>{data.date}</h3>
                 <div className='article'>
