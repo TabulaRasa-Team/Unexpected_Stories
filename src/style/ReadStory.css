@@ -2,6 +2,7 @@
     position:absolute;
     height:100vh;
     width: 100vw;
+    margin-top: 21%;
     max-width: 430px;
     max-height: 932px;
     overflow: hidden;
