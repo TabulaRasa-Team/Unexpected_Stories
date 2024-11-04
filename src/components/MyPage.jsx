@@ -4,18 +4,39 @@ import '../style/MyPage.css';
 import Post from './Post';
 import InputStory from './InputStory'
 import Button from './Button'
-import { Link } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function MyPage() {
     const [posts, setPosts] = useState([])
     const server = process.env.REACT_APP_SERVER
     const location = useLocation()
     const data = location.state
+    const nav = useNavigate()
     const [selected, setSelected] = useState(false)
     const [selectedId, setSelectedId] = useState(false)
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
+
+    const postUpdate = async () => {
+        try {
+            await axios.put(`${server}/board/${selectedId}`, {
+                title,
+                content
+            })
+        } catch(error) {
+            console.error("Error : ", error)
+        }
+
+        alert("수정에 성공하였습니다")
+        nav('../../MenuPage', {
+            state: {
+                name: data.name,
+                num: data.num,
+                toWhere: data.toWhere,
+                distance: data.distance,
+            },
+        })
+    }
 
     useEffect(() => {
         if(posts.length > 0 && selectedId > 0) {
@@ -92,12 +113,23 @@ function MyPage() {
                 setContent={setContent}
             />}
             <div className="buttonContainer">
-                <Link to='../../MenuPage' state={{name:data.name,num:data.num,toWhere:data.toWhere,distance:data.distance}} style={{ textDecoration: "none"}}>
-                    <Button 
-                        content={selected ? "수정 완료!" : "뒤로가기"}
-                        
-                    />
-                </Link>
+                <Button 
+                    content={selected ? "수정 완료!" : "뒤로가기"}
+                    onClick={() => {
+                        if(!selected) {
+                            nav('../../MenuPage', {
+                                state: {
+                                    name: data.name,
+                                    num: data.num,
+                                    toWhere: data.toWhere,
+                                    distance: data.distance,
+                                },
+                            })
+                        }
+                        else if(title.length < 1 || content.length < 1 ) alert("공백은 입력하실 수 없습니다")
+                        else postUpdate()
+                    }}
+                />
             </div>
         </>
     )
