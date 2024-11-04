@@ -29,8 +29,11 @@
     background-color: transparent;
     font-size : 0.9em;
     color: #dadada;
-    font-weight: 400;
     font-family: '더잠실3';
+    line-height: 140%;
+    font-style: normal;
+    font-weight: 400;
+    white-space: pre-wrap;
 }
 
 .readFooter{

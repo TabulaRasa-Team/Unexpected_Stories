@@ -35,6 +35,8 @@
     background-color: transparent;
     font-size : 0.9em;
     color: rgba(255, 255, 255, 0.60);
-    font-weight: 400;
     font-family: "The Jamsil";
+    line-height: 140%;
+    font-style: normal;
+    font-weight: 400;
 }
