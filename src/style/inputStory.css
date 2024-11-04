@@ -8,7 +8,7 @@
     margin : 4% auto;
     background-color : #FFFFFF4D;
     border-radius : 1em;
-    padding : 6% 6%;
+    padding : 6% 6% 3% 6%;
 }
 
 .inputContainer > input {
@@ -30,13 +30,47 @@
 
 .inputContent {
     width : 100%;
-    height : 100%;
+    height : 80%;
     border : none;
     background-color: transparent;
-    font-size : 0.9em;
+    font-size : 0.95em;
     color: rgba(255, 255, 255, 0.60);
     font-family: "The Jamsil";
     line-height: 140%;
     font-style: normal;
     font-weight: 400;
 }
+
+.funcInput {
+    width : 100%;
+    height : fit-content;
+    display : flex;
+}
+
+.funcInput > img {
+    width : 6vw;
+    height : 5vh;
+    margin-left : auto;
+}
+
+.ai_recommend {
+    display : flex;
+    align-items : center;
+    gap : 2vw;
+}
+
+.ai_recommend > img {
+    width : 5vw;
+    height : 3.5vh;
+    display : inline;
+}
+
+.ai_recommend > span {
+    color : #FFFFFF99;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-size : 0.9em;
+    font-family: "The Jamsil";
+}
+
