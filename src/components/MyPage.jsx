@@ -47,11 +47,18 @@ function MyPage() {
         if(selected) cssEffect()
     }, [selected]) 
 
+    const cssPostList = {
+        ...(!selected && {
+            overflowY : 'scroll',
+            msOverflowStyle : 'none',
+            scrollbarWidth: 'none'
+        })
+    }
 
     return (
         <>
             <h1 className='MyPageMainTitle' style={{opacity : opacity}}>내가 공유한 이야기</h1>
-            <ul className='PostList'>
+            <ul className='PostList' style={cssPostList}>
                 {posts.map((item) => (
                     <Post 
                         data={item}

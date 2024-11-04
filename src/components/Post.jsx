@@ -13,7 +13,11 @@ const Post = ({data, isSelected, selectedId, onClick}, key) => {
     }, [])
     let cssEffectStyle = {
         opacity: opacity,
-        transform: `translateY(${move}px)`
+        transform: `translateY(${move}px)`,
+        ...(selectedId && {
+            position : 'absolute',
+            width : '100%'
+        })
     }
 
     useEffect(() => {
@@ -34,7 +38,7 @@ const Post = ({data, isSelected, selectedId, onClick}, key) => {
             }, 40)
         } else if(position.current) {
             const coordinate_Y = position.current.getBoundingClientRect().top
-            const moveDistance = 50 - coordinate_Y
+            const moveDistance = 40 - coordinate_Y
 
             const moveUp = setInterval(() => {
                 setMove((prev) => {
@@ -46,6 +50,10 @@ const Post = ({data, isSelected, selectedId, onClick}, key) => {
                     return prev - 1.8
                 }, 10)
             })
+
+            cssEffectStyle = {
+                top : moveDistance
+            }
         }
     }
 
