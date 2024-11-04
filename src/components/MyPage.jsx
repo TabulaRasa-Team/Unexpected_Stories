@@ -17,6 +17,8 @@ function MyPage() {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
 
+    console.log(posts)
+
     const postUpdate = async () => {
         try {
             await axios.put(`${server}/board/${selectedId}`, {
@@ -38,10 +40,31 @@ function MyPage() {
         })
     }
 
+    const postDelete = async () => {
+        try {
+            await axios.delete(`${server}/board/${selectedId}`)
+        } catch(error) {
+            console.error("Error : ", error)
+        }
+
+        alert("글이 삭제되었습니다")
+        nav('../../MenuPage', {
+            state: {
+                name: data.name,
+                num: data.num,
+                toWhere: data.toWhere,
+                distance: data.distance,
+            },
+        })
+    }
+
     useEffect(() => {
-        if(posts.length > 0 && selectedId > 0) {
-            setTitle(posts[selectedId - 1].title)
-            setContent(posts[selectedId - 1].content)
+        if(selectedId) {
+            const selectedPost = posts.find(post => post.text_id === selectedId);
+            if(selectedPost) {
+                setTitle(selectedPost.title);
+                setContent(selectedPost.content);
+            }
         }
     }, [selectedId, posts])
 
@@ -111,6 +134,9 @@ function MyPage() {
                 content={content}
                 setTitle={setTitle}
                 setContent={setContent}
+                onClick={() => {
+                    if(window.confirm("정말 삭제하시겠습니까?")) postDelete()
+                }}
             />}
             <div className="buttonContainer">
                 <Button 
