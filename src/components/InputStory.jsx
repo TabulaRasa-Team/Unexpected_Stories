@@ -1,5 +1,7 @@
 import {React, useState, useEffect} from 'react'
 import '../style/inputStory.css'
+import ai_reco from '../images/ai_reco.svg'
+import del_pic from '../images/del.svg'
 
 const InputStory = ({use, selected, title, setTitle, content, setContent}) => {
     const [opacity, setOpacity] = useState(0)
@@ -49,6 +51,13 @@ const InputStory = ({use, selected, title, setTitle, content, setContent}) => {
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
             />
+            <div className="funcInput">
+                <span className="ai_recommend">
+                    <img src={ai_reco} alt="ai"/>
+                    <span>이웃들의 최근 유행 키워드는?</span>
+                </span>
+                {use == 'modify' && <img src={del_pic} alt="del"/>}
+            </div>
         </div>
     )
 }

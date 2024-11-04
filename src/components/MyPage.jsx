@@ -14,12 +14,22 @@ function MyPage() {
     const data = location.state
     const [selected, setSelected] = useState(false)
     const [selectedId, setSelectedId] = useState(false)
+    const [title, setTitle] = useState('');
+    const [content, setContent] = useState('');
+
+    useEffect(() => {
+        if(posts.length > 0 && selectedId > 0) {
+            setTitle(posts[selectedId - 1].title)
+            setContent(posts[selectedId - 1].content)
+        }
+    }, [selectedId, posts])
 
     useEffect(() => {
         const getAll = async () => {
             try {   
                 const response = await axios.get(`${server}/board`)
                 setPosts(response.data)
+                console.log(response.data)
             } catch(error) {
                 console.error("Error", error)
             }
@@ -72,10 +82,21 @@ function MyPage() {
                     />
                 ))}
             </ul>
-            {selected && <InputStory use={"modify"} selected={selected}/>}
+            {selected && 
+            <InputStory 
+                use={"modify"} 
+                selected={selected}
+                title={title}
+                content={content}
+                setTitle={setTitle}
+                setContent={setContent}
+            />}
             <div className="buttonContainer">
                 <Link to='../../MenuPage' state={{name:data.name,num:data.num,toWhere:data.toWhere,distance:data.distance}} style={{ textDecoration: "none"}}>
-                    <Button content={"뒤로가기"} />
+                    <Button 
+                        content={selected ? "수정 완료!" : "뒤로가기"}
+                        
+                    />
                 </Link>
             </div>
         </>
