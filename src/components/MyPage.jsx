@@ -47,6 +47,7 @@ function MyPage() {
         if(selected) cssEffect()
     }, [selected]) 
 
+
     return (
         <>
             <h1 className='MyPageMainTitle' style={{opacity : opacity}}>내가 공유한 이야기</h1>
@@ -54,13 +55,13 @@ function MyPage() {
                 {posts.map((item) => (
                     <Post 
                         data={item}
-                        key={item.id}
+                        key={item.text_id-1}
                         onClick={() => {
-                            setSelectedId(item.id)
+                            setSelectedId(item.text_id)
                             setSelected(true)
                         }}
                         isSelected={selected}
-                        selectedId={selectedId == item.id ? selectedId : false}
+                        selectedId={selectedId == item.text_id ? selectedId : false}
                     />
                 ))}
             </ul>

@@ -8,6 +8,9 @@ const Post = ({data, isSelected, selectedId, onClick}, key) => {
     const [move, setMove] = useState(0)
     const position = useRef(0)
 
+    useEffect(() => {
+        console.log(selectedId)
+    }, [])
     let cssEffectStyle = {
         opacity: opacity,
         transform: `translateY(${move}px)`
