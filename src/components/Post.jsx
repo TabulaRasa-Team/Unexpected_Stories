@@ -61,10 +61,10 @@ const Post = ({data, isSelected, selectedId, onClick}, key) => {
                     </div>
                     <div className='articleBack'>
                         <div className='articleItem'>
-                            <img src={favorite} alt="좋아요" /><div> {data.like}</div>
+                            <img src={favorite} alt="좋아요" /><div> 1423</div>
                         </div>
                         <div className='articleItem'>
-                            <img src={view} alt="조회수" /><div> {data.view}</div>
+                            <img src={view} alt="조회수" /><div> 9483</div>
                         </div>
                     </div>
                 </div>
