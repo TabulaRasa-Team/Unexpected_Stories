@@ -24,7 +24,7 @@
 
 .readContent {
     width : 100%;
-    height : 100%;
+    height : 78%;
     border : none;
     background-color: transparent;
     font-size : 0.9em;
@@ -34,6 +34,7 @@
     font-style: normal;
     font-weight: 400;
     white-space: pre-wrap;
+    overflow-y : scroll;
 }
 
 .readFooter{
