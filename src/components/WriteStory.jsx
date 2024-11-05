@@ -15,12 +15,14 @@ const WriteStory = () => {
     const location = useLocation();
     const nav = useNavigate()
     const data = location.state;
+    const [busstop, setBusStop] = useState(data.name)
 
     const writePost = async () => {
         try {
             await axios.post(`${server}/board`, {
                 title,
-                content
+                content,
+                busstop
             })
 
             setTitle('')
