@@ -13,18 +13,16 @@ const ReadStoryPost = () => {
 
     
     useEffect(() => {
-        const countPost = async () => {
-            try {   
-                const response = await axios.get(`${server}/board/count`)
-
-                let randomId = Math.floor(Math.random() * (response.data.count - 1 + 1)) + 1
-                setTextId(randomId);
+        const randomPost = async () => {
+            try {
+                const response = await axios.get(`${server}/board/random`)
+                setTextId(response.data.random)
             } catch(error) {
-                console.error("Error", error)
+                console.error("Error : ", error)
             }
         }
 
-        countPost()
+        randomPost()
     }, [])
 
     useEffect(() => {
@@ -53,7 +51,7 @@ const ReadStoryPost = () => {
                         <img src={sound} />
                         <img src={speaker} />
                     </div>
-                    <h4>2024/09/14 18:35 작성</h4>
+                    <h4>{date}</h4>
                 </footer>
             </div>
         </>
