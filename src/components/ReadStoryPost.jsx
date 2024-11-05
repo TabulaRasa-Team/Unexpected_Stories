@@ -23,6 +23,10 @@ const ReadStoryPost = () => {
         }
 
         randomPost()
+
+        return () => {
+            window.responsiveVoice.cancel();
+        }
     }, [])
 
     return (
