@@ -8,27 +8,12 @@ const ReadStoryPost = () => {
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
     const [date, setDate] = useState('')
-    const [text_id, setTextId] = useState(0)
     const server = process.env.REACT_APP_SERVER
-
     
     useEffect(() => {
         const randomPost = async () => {
             try {
                 const response = await axios.get(`${server}/board/random`)
-                setTextId(response.data.random)
-            } catch(error) {
-                console.error("Error : ", error)
-            }
-        }
-
-        randomPost()
-    }, [])
-
-    useEffect(() => {
-        const getPost = async () => {
-            try {
-                const response = await axios.get(`${server}/board/${text_id}`)
                 setTitle(response.data.title)
                 setContent(response.data.content)
                 setDate(response.data.date)
@@ -37,8 +22,8 @@ const ReadStoryPost = () => {
             }
         }
 
-        if(text_id) getPost()
-    }, [text_id])
+        randomPost()
+    }, [])
 
     return (
         <>
@@ -51,7 +36,7 @@ const ReadStoryPost = () => {
                         <img src={sound} />
                         <img src={speaker} />
                     </div>
-                    <h4>{date}</h4>
+                    <h4>{date.slice(0, 4)}/{date.slice(5, 7)}/{date.slice(8, 10)} {date.slice(11,13)}:{date.slice(14, 16)} 작성</h4>
                 </footer>
             </div>
         </>
