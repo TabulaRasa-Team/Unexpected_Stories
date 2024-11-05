@@ -23,6 +23,10 @@ const ReadStoryPost = () => {
         }
 
         randomPost()
+
+        return () => {
+            window.responsiveVoice.cancel();
+        }
     }, [])
 
     return (
@@ -34,7 +38,11 @@ const ReadStoryPost = () => {
                 <footer className='readFooter'>
                     <div>
                         <img src={sound} />
-                        <img src={speaker} />
+                        <img src={speaker} onClick={() => {
+                            window.responsiveVoice.speak(title + content, "Korean Male", {
+                                rate : 0.8
+                            });
+                        }}/>
                     </div>
                     <h4>{date.slice(0, 4)}/{date.slice(5, 7)}/{date.slice(8, 10)} {date.slice(11,13)}:{date.slice(14, 16)} 작성</h4>
                 </footer>
