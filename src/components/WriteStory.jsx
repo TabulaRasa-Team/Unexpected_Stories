@@ -15,7 +15,6 @@ const WriteStory = () => {
     const location = useLocation();
     const nav = useNavigate()
     const data = location.state;
-    console.log(data)
 
     const writePost = async () => {
         try {
