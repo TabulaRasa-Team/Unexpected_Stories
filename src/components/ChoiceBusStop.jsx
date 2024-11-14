@@ -7,24 +7,24 @@ function ChoiceBusStop() {
     let BusStopDummy = [
         {
             id: 1,
-            name: "한밭대학교",
-            num: "41680, 41690",
-            toWhere: "수통골삼거리",
-            distance: 384
-        },
-        {
-            id: 2,
-            name: "수통골입구",
-            num: "45770, 45760",
-            toWhere: "한밭대학교",
-            distance: 235
-        },
-        {
-            id: 3,
             name: "삼성화재연수원",
             num: "41710, 41730",
             toWhere: "신협연수원",
-            distance: 235
+            distance: 309
+        },
+        {
+            id: 2,
+            name: "한밭대학교",
+            num: "41680, 41690",
+            toWhere: "수통골삼거리",
+            distance: 498
+        },
+        {
+            id: 3,
+            name: "수통골입구",
+            num: "45770, 45760",
+            toWhere: "한밭대학교",
+            distance: 267
         }
     ];
     return (
