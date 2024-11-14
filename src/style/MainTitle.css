@@ -10,7 +10,16 @@
     font-weight:300;
     letter-spacing: 0.1rem;
     font-family: '별빛하늘L';
+    transform: translateY(50px);
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1s ease-out;
 }
+
+.Maintitle.slide-up {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 @media screen and (min-height:820px){
     .Maintitle{
         margin: 32% auto 0 auto;
@@ -24,7 +33,15 @@
     color: white;
     font-family: '더잠실1';
     font-size: large;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1s ease-out 0.3s;
+}
+
+.subtitle.slide-up {
+    
     opacity: 65%;
+    transform: translateY(0);
 }
 
 .startBtn{
@@ -33,12 +50,19 @@
     height: 3em;
     margin: 2em auto;
     border-radius: 2em;
-    opacity: 65%;
+    opacity: 0;
     border:none;
     font-size : 0.8em;
+    transform: translateY(50px);
+    transition: transform 1s ease-out, opacity 1s ease-out 0.9s;
 }
 .startBtn span{
     font-family: '더잠실1';
     font-size: 1.5em;
     color:#2f6e85;
+}
+
+.startBtn.slide-up {
+    opacity: 65%;
+    transform: translateY(0);
 }
