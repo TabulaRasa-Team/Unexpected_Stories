@@ -4,13 +4,22 @@
     width:fit-content;
     height: fit-content;
     text-align: center;
-    margin:25% auto 0 auto;
+    margin:20% auto 0 auto;
     color:white;
     font-size: 3.2rem;
     font-weight:300;
     letter-spacing: 0.1rem;
     font-family: '별빛하늘L';
+    transform: translateY(50px);
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1s ease-out 2.6s;
 }
+
+.Maintitle.slide-up {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 @media screen and (min-height:820px){
     .Maintitle{
         margin: 32% auto 0 auto;
@@ -24,7 +33,14 @@
     color: white;
     font-family: '더잠실1';
     font-size: large;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1s ease-out 3s;
+}
+
+.subtitle.slide-up {
     opacity: 65%;
+    transform: translateY(0);
 }
 
 .startBtn{
@@ -33,12 +49,193 @@
     height: 3em;
     margin: 2em auto;
     border-radius: 2em;
-    opacity: 65%;
+    opacity: 0;
     border:none;
     font-size : 0.8em;
+    transform: translateY(50px);
+    transition: transform 1s ease-out, opacity 1s ease-out 3.7s;
 }
 .startBtn span{
     font-family: '더잠실1';
     font-size: 1.5em;
     color:#2f6e85;
 }
+
+.startBtn.slide-up {
+    opacity: 65%;
+    transform: translateY(0);
+}
+
+.night {
+    z-index: 99999;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
+  }
+  
+.shooting_star {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 0.5px;
+    z-index: -9999;
+    background: linear-gradient(-45deg, #f9fbff, rgba(0, 0, 255, 0));
+    border-radius: 999px;
+    -webkit-filter: drop-shadow(0 0 6px #f9fbff);
+            filter: drop-shadow(0 0 6px #f9fbff);
+    -webkit-animation: tail 4000ms ease-in-out , shooting 4000ms ease-in-out ;
+            animation: tail 4000ms ease-in-out , shooting 4000ms ease-in-out ;
+  }
+  .shooting_star::before, .shooting_star::after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 1px);
+    right: 0;
+    height: 0.5px;
+    background: linear-gradient(-45deg, rgba(0, 0, 255, 0), #f9fbff, rgba(0, 0, 255, 0));
+    -webkit-transform: translateX(50%) rotateZ(45deg);
+            transform: translateX(50%) rotateZ(45deg);
+    border-radius: 100%;
+    -webkit-animation: shining 3000ms ease-in-out;
+            animation: shining 3000ms ease-in-out;
+  }
+
+  .shooting_star:nth-child(1) {
+    top: calc(50% - -90px);
+    left: calc(50% - 260px);
+    -webkit-animation-delay: 364ms;
+            animation-delay: 364ms;
+  }
+  .shooting_star:nth-child(1)::before, .shooting_star:nth-child(1)::after, .shooting_star:nth-child(1)::after {
+    -webkit-animation-delay: 364ms;
+            animation-delay: 364ms;
+  }
+  .shooting_star:nth-child(2) {
+    top: calc(50% - 120px);
+    left: calc(50% - 200px);
+    -webkit-animation-delay: 830ms;
+            animation-delay: 830ms;
+  }
+  .shooting_star:nth-child(2)::before, .shooting_star:nth-child(2)::after, .shooting_star:nth-child(2)::after {
+    -webkit-animation-delay: 1290ms;
+            animation-delay: 1290ms;
+  }
+  .shooting_star:nth-child(3) {
+    top: calc(50% - -200px);
+    left: calc(50% - 200px);
+    -webkit-animation-delay: 590ms;
+            animation-delay: 590ms;
+  }
+  .shooting_star:nth-child(3)::before, .shooting_star:nth-child(2)::after, .shooting_star:nth-child(2)::after {
+    -webkit-animation-delay: 590ms;
+            animation-delay: 590ms;
+  }
+  .shooting_star:nth-child(4) {
+    top: calc(50% - -10px);
+    left: calc(50% - 60px);
+    -webkit-animation-delay: 210ms;
+            animation-delay: 210ms;
+  }
+  .shooting_star:nth-child(4)::before, .shooting_star:nth-child(2)::after, .shooting_star:nth-child(2)::after {
+    -webkit-animation-delay: 210ms;
+            animation-delay: 210ms;
+  }
+  .shooting_star:nth-child(5) {
+    top: calc(50% - -123px);
+    left: calc(50% - -25px);
+    -webkit-animation-delay: 320ms;
+            animation-delay: 320ms;
+  }
+  .shooting_star:nth-child(5)::before, .shooting_star:nth-child(2)::after, .shooting_star:nth-child(2)::after {
+    -webkit-animation-delay: 320ms;
+            animation-delay: 320ms;
+  }
+
+@-webkit-keyframes tail {
+    0% {
+      width: 0;
+    }
+    30% {
+      width: 100px;
+    }
+    100% {
+      width: 0;
+    }
+  }
+  
+  @keyframes tail {
+    0% {
+      width: 0;
+    }
+    30% {
+      width: 100px;
+    }
+    100% {
+      width: 0;
+    }
+  }
+  @-webkit-keyframes shining {
+    0% {
+      width: 0;
+    }
+    50% {
+      width: 30px;
+    }
+    100% {
+      width: 0;
+    }
+  }
+  @keyframes shining {
+    0% {
+      width: 0;
+    }
+    50% {
+      width: 30px;
+    }
+    100% {
+      width: 0;
+    }
+  }
+  @-webkit-keyframes shooting {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(300px);
+              transform: translateX(300px);
+    }
+  }
+  @keyframes shooting {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(300px);
+              transform: translateX(300px);
+    }
+  }
+  @-webkit-keyframes sky {
+    0% {
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+    }
+    100% {
+      -webkit-transform: rotate(405deg);
+              transform: rotate(405deg);
+    }
+  }
+  @keyframes sky {
+    0% {
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+    }
+    100% {
+      -webkit-transform: rotate(405deg);
+              transform: rotate(405deg);
+    }
+  }
+  
