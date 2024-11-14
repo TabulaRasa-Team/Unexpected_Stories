@@ -7,24 +7,24 @@ function ChoiceBusStop() {
     let BusStopDummy = [
         {
             id: 1,
-            name: "부산소프트웨어마이스터고교",
-            num: "12615, 92207, 1578",
-            toWhere: "죽림사거리",
-            distance: 13
+            name: "한밭대학교",
+            num: "41680, 41690",
+            toWhere: "수통골삼거리",
+            distance: 384
         },
         {
             id: 2,
-            name: "죽림",
-            num: "1252, 3516, 13455",
-            toWhere: "덕포마을",
-            distance: 153
+            name: "수통골입구",
+            num: "45770, 45760",
+            toWhere: "한밭대학교",
+            distance: 235
         },
         {
             id: 3,
-            name: "죽림삼거리",
-            num: "12612, 1575, 92399",
-            toWhere: "부산소프트웨어마이스터고교",
-            distance: 232
+            name: "삼성화재연수원",
+            num: "41710, 41730",
+            toWhere: "신협연수원",
+            distance: 235
         }
     ];
     return (

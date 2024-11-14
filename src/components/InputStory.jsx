@@ -21,7 +21,7 @@ const InputStory = ({use, selected, title, setTitle, content, setContent, onClic
     }
 
     useEffect(() => {
-        if(selected) cssEffect()
+        if(selected) setTimeout(() => cssEffect(), 700)
     }, [selected]) 
 
     let storyStyle = {
