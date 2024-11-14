@@ -17,8 +17,6 @@ function MyPage() {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
 
-    console.log(posts)
-
     const postUpdate = async () => {
         try {
             await axios.put(`${server}/board/${selectedId}`, {
@@ -73,7 +71,6 @@ function MyPage() {
             try {   
                 const response = await axios.get(`${server}/board`)
                 setPosts(response.data)
-                console.log(response.data)
             } catch(error) {
                 console.error("Error", error)
             }
