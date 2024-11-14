@@ -10,21 +10,21 @@ function ChoiceBusStop() {
             name: "삼성화재연수원",
             num: "41710, 41730",
             toWhere: "신협연수원",
-            distance: 309
+            distance: 267
         },
         {
             id: 2,
             name: "한밭대학교",
             num: "41680, 41690",
             toWhere: "수통골삼거리",
-            distance: 498
+            distance: 314
         },
         {
             id: 3,
             name: "수통골입구",
             num: "45770, 45760",
             toWhere: "한밭대학교",
-            distance: 267
+            distance: 493
         }
     ];
     return (
