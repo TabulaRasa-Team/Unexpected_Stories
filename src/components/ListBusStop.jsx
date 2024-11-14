@@ -9,7 +9,7 @@ function ListBusStop({ BusStop }) {
                 <div className='busStop'>
                     <div>
                         <span>{BusStop.name}</span><br />
-                        <span className='info'>{BusStop.num}   |   {BusStop.toWhere}</span>
+                        <span className='info'>{BusStop.num}   |   {BusStop.toWhere} 방면</span>
                     </div>
                     <span className='distance'>{BusStop.distance}M</span>
                 </div>
