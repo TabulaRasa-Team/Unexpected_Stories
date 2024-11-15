@@ -37,7 +37,6 @@ const ReadStoryPost = () => {
                 <span className='readContent'>{content}</span>
                 <footer className='readFooter'>
                     <div>
-                        <img src={sound} />
                         <img src={speaker} onClick={() => {
                             window.responsiveVoice.speak(title + "." + content, "Korean Male", {
                                 rate : 0.8
