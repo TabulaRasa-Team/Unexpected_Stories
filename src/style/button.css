@@ -1,3 +1,5 @@
+@import './Font.css';
+
 .buttonContainer {
     position: fixed;
     bottom: 2vh;
@@ -20,4 +22,6 @@
     display : block;
     position : relative;
     z-index : 1000;
+    border : none;
+    font-family: "더잠실1";
 }
