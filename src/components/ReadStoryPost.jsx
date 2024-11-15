@@ -39,7 +39,7 @@ const ReadStoryPost = () => {
                     <div>
                         <img src={sound} />
                         <img src={speaker} onClick={() => {
-                            window.responsiveVoice.speak(title + content, "Korean Male", {
+                            window.responsiveVoice.speak(title + "." + content, "Korean Male", {
                                 rate : 0.8
                             });
                         }}/>
