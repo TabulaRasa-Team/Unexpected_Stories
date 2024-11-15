@@ -1,11 +1,10 @@
 .buttonContainer {
-    position: fixed;
+    position:relative;
     bottom: 2vh;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     justify-content: center;
-    width: 100%;
     z-index : 1000;
 }
 
