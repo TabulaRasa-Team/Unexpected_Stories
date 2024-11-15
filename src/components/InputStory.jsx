@@ -27,8 +27,8 @@ const InputStory = ({use, selected, title, setTitle, content, setContent, onClic
     let storyStyle = {
         ...(use === 'modify' && {
             marginTop : "-59vh",
-            width : "19em",
-            height : "60vh",
+            width : "19rem",
+            height : "58vh",
             opacity : opacity,
             position : "relative",
             zIndex : "1000"
