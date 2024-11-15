@@ -7,6 +7,17 @@ import del_pic from '../images/del.svg'
 const InputStory = ({use, selected, title, setTitle, content, setContent, onClick}) => {
     const [opacity, setOpacity] = useState(0)
 
+    const dummy = [
+        "주말 계획",
+        "동네 소식",
+        "학교 생활",
+        "학원 일정",
+        "산책",
+        "지역 맛집",
+        "재밌었던 일",
+        "최근 웃겼던 경험"
+    ]
+
     const cssEffect = () => {
         const fadeOut = setInterval(() => {
             setOpacity((prev) => {
@@ -53,7 +64,10 @@ const InputStory = ({use, selected, title, setTitle, content, setContent, onClic
                 onChange={(e) => setContent(e.target.value)}
             />
             <div className="funcInput">
-                <span className="ai_recommend">
+                <span className="ai_recommend" onClick={() => {
+                    let index = Math.floor(Math.random() * 8)
+                    alert(`${dummy[index]}에 대해 말해보는 건 어떨까요?`)
+                }}>
                     <img src={ai_reco} alt="ai"/>
                     <span>이웃들의 최근 유행 키워드는?</span>
                 </span>
