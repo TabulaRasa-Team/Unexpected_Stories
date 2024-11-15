@@ -27,10 +27,9 @@ const ReadStoryBackground = () => {
     return (
         <>
             <Outlet />
-            <video className='bg-video' preload="auto" autoPlay muted>
-                <source src='/BusAnimation.mp4' type="video/mp4" />
-            </video>
-
+            <div className='night1'>
+                <div class="shooting_star1"></div>
+            </div>
         </>
     );
 }
