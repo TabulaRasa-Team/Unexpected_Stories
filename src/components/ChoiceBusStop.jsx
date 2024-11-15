@@ -29,11 +29,9 @@ function ChoiceBusStop() {
     ];
     return (
         <div>
-            <Link to="../">
-                <span className='title'>
+            <span className='title'>
                     어느 정류장의 이야기를 해볼까?
-                </span>
-            </Link>
+            </span>
             <ul>
                 {BusStopDummy.map((item) => (
                     <ListBusStop BusStop={item} key={item.id} />
