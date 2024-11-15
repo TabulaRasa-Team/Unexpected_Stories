@@ -1,3 +1,5 @@
+@import './Font.css';
+
 .inputContainer {
     display : flex;
     flex-direction : column;
@@ -24,8 +26,10 @@
     background-color: transparent;
     font-size : 1.4em;
     color: #ffffff99;
+    font-family: "더잠실4";
+    font-style: normal;
     font-weight: 700;
-    font-family: "The Jamsil";
+    line-height: normal;
 }
 
 .inputContent {
@@ -35,10 +39,11 @@
     background-color: transparent;
     font-size : 0.95em;
     color: rgba(255, 255, 255, 0.60);
-    font-family: "The Jamsil";
+    font-family: "더잠실3";
     line-height: 140%;
     font-style: normal;
     font-weight: 400;
+    line-height: normal;
 }
 
 .funcInput {
@@ -71,6 +76,6 @@
     font-weight: 400;
     line-height: normal;
     font-size : 0.9em;
-    font-family: "The Jamsil";
+    font-family: "더잠실2";
 }
 
