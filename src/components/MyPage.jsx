@@ -16,6 +16,12 @@ function MyPage() {
     const [selectedId, setSelectedId] = useState(false)
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
+    const [reversePosts, setRever] = useState([])
+    
+    useEffect(() => {
+        setRever(posts.reverse())
+        console.log(reversePosts)
+    }, [posts])
 
     const postUpdate = async () => {
         try {
@@ -110,7 +116,7 @@ function MyPage() {
         <>
             <h1 className='MyPageMainTitle' style={{opacity : opacity}}>내가 공유한 이야기</h1>
             <ul className='PostList' style={cssPostList}>
-                {posts.reverse().map((item) => (
+                {reversePosts.map((item) => (
                     <Post 
                         data={item}
                         key={item.text_id-1}
