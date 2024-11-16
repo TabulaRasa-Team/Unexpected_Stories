@@ -110,7 +110,7 @@ function MyPage() {
         <>
             <h1 className='MyPageMainTitle' style={{opacity : opacity}}>내가 공유한 이야기</h1>
             <ul className='PostList' style={cssPostList}>
-                {posts.map((item) => (
+                {posts.reverse().map((item) => (
                     <Post 
                         data={item}
                         key={item.text_id-1}
