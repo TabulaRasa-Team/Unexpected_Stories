@@ -4,6 +4,10 @@ import '../style/ChoiceBusStop.css';
 import { Link } from 'react-router-dom';
 
 function ChoiceBusStop() {
+    navigator.geolocation.getCurrentPosition((position) => {
+        alert(position.coords.latitude)
+    });
+
     let BusStopDummy = [
         {
             id: 1,
