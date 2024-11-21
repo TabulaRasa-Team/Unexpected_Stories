@@ -24,15 +24,17 @@ const MenuPage = () => {
                         <span className='distance'>{data.distance}M</span>
                     </div>
                 </Link>
-                <Link to="../ReadStoryBackground" state={{ name: data.name, num: data.num, toWhere: data.toWhere, distance: data.distance }} style={{ textDecoration: "none" }}>
-                    <button className='menuBtn'>편지 읽기</button>
-                </Link>
-                <Link to="../WriteStory" state={{ name: data.name, num: data.num, toWhere: data.toWhere, distance: data.distance }} style={{ textDecoration: "none" }}>
-                    <button className='menuBtn'>편지 쓰기</button>
-                </Link>
-                <Link to="../MyPageBackground/Mypage" state={{ name: data.name, num: data.num, toWhere: data.toWhere, distance: data.distance }} style={{ textDecoration: "none" }}>
-                    <button className='menuBtn'>마이 페이지</button>
-                </Link>
+                <div className='btnDiv'>
+                    <Link to="../ReadStoryBackground" state={{ name: data.name, num: data.num, toWhere: data.toWhere, distance: data.distance }} style={{ textDecoration: "none" }}>
+                        <button className='menuBtn'>편지 읽기</button>
+                    </Link>
+                    <Link to="../WriteStory" state={{ name: data.name, num: data.num, toWhere: data.toWhere, distance: data.distance }} style={{ textDecoration: "none" }}>
+                        <button className='menuBtn'>편지 쓰기</button>
+                    </Link>
+                    <Link to="../MyPageBackground/Mypage" state={{ name: data.name, num: data.num, toWhere: data.toWhere, distance: data.distance }} style={{ textDecoration: "none" }}>
+                        <button className='menuBtn'>마이 페이지</button>
+                    </Link>
+                </div>
             </div>
         </div>
     )
