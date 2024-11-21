@@ -11,7 +11,9 @@ const MenuPage = () => {
     return (
         <div className='BackgroundContainer'>
             <h1 className='MainTitle'>어쩌다 발견한 이야기</h1>
-            <img src={paperPlane} className='paperPlane' />
+            <div className='paperPlaneDiv'>
+                <img src={paperPlane} className='paperPlane' />
+            </div>
             <div className='contents'>
                 <Link to="../ChoiceBusStop" style={{ textDecoration: "none" }}>
                     <div className='busStop busStop2'>

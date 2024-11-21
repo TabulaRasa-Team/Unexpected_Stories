@@ -27,7 +27,16 @@
 
 .paperPlane{
     display: block;
+    object-fit: fill;
     margin: 4em auto 2em auto;
+    width: 100%;
+    height: 100%;
+}
+
+.paperPlaneDiv{
+    margin: 15% auto 10% auto;
+    width: 80%;
+    height: 30%;
 }
 
 .busStop2{
