@@ -7,6 +7,8 @@
     overflow: hidden;
     background-color: #05091099;
     backdrop-filter: blur(6px);
+	-webkit-backdrop-filter: blur(6px);
+	transform: translate3d(0, 0, 0);
     overflow-y: scroll;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;

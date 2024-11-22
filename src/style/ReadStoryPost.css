@@ -5,11 +5,11 @@
     flex-direction : column;
     gap : 4%;
     box-sizing : border-box;
-    width : 20em;
-    height : 66vh;
+    width : 70%;
+    height : 60%;
     margin : 14% auto;
     background-color : #FFFFFF4D;
-    border-radius : 1em;
+    border-radius : 1rem;
     padding : 6% 6% 2%;
 }
 
@@ -27,7 +27,7 @@
     height : 78%;
     border : none;
     background-color: transparent;
-    font-size : 0.9em;
+    font-size : 0.9rem;
     color: #dadada;
     font-family: '더잠실3';
     line-height: 140%;
@@ -43,7 +43,7 @@
 }
 
 .readFooter > div > img{
-    margin-right: 0.8em;
+    margin-right: 0.8rem;
 }
 
 .readFooter > h4{
@@ -51,6 +51,6 @@
     position:relative;
     top:0.5em;
     color: #dadada;
-    font-size: 0.85em;
+    font-size: 0.85rem;
 }
 
