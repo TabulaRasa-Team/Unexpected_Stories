@@ -64,10 +64,10 @@ function MyPage() {
 
     useEffect(() => {
         if(selectedId) {
-            const selectedPost = posts.find(post => post.text_id === selectedId);
+            const selectedPost = posts.find(post => post.textId === selectedId);
             if(selectedPost) {
-                setTitle(selectedPost.title);
-                setContent(selectedPost.content);
+                setTitle(selectedPost.title)
+                setContent(selectedPost.content)
             }
         }
     }, [selectedId, posts])
@@ -119,13 +119,13 @@ function MyPage() {
                 {reversePosts.map((item) => (
                     <Post 
                         data={item}
-                        key={item.text_id-1}
+                        key={item.textId-1}
                         onClick={() => {
-                            setSelectedId(item.text_id)
+                            setSelectedId(item.textId)
                             setSelected(true)
                         }}
                         isSelected={selected}
-                        selectedId={selectedId == item.text_id ? selectedId : false}
+                        selectedId={selectedId == item.textId ? selectedId : false}
                     />
                 ))}
             </ul>

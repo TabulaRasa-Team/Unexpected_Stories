@@ -4,7 +4,7 @@ import '../style/ReadStoryPost.css'
 import sound from '../images/sound.png'
 import speaker from '../images/speaker.png'
 
-const ReadStoryPost = () => {
+const ReadStoryPost = ({setTextId}) => {
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
     const [date, setDate] = useState('')
@@ -14,6 +14,7 @@ const ReadStoryPost = () => {
         const randomPost = async () => {
             try {
                 const response = await axios.get(`${server}/board/random`)
+                setTextId(response.data.textId)
                 setTitle(response.data.title)
                 setContent(response.data.content)
                 setDate(response.data.date)
