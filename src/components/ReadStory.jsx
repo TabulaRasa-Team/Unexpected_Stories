@@ -1,22 +1,30 @@
-import React from 'react';
+import {React, useRef, useState} from 'react';
+import axios from 'axios'
+import { Link, useLocation } from 'react-router-dom'
 import '../style/ReadStory.css'
 import ReadStoryPost from './ReadStoryPost'
 import happy_emoji from '../images/happy_emoji.svg'
 import kiss_emoji from '../images/kiss_emoji.svg'
 import tear_emoji from '../images/tear_emoji.svg'
 import Button from './Button'
-import { Link, useLocation } from 'react-router-dom'
 
 const ReadStory = () => {
-    const location = useLocation();
-    const data = location.state;
+    const [textId, setTextId] = useState('')
+    const location = useLocation()
+    const data = location.state
+    const emoji_src = useRef([happy_emoji, tear_emoji, kiss_emoji])
+
     return (
         <div className='bg-container'>
-            <ReadStoryPost/>
+            <ReadStoryPost setTextId={setTextId}/>
             <div className='emojis'>
-                <img src={happy_emoji}/>
-                <img src={tear_emoji}/>
-                <img src={kiss_emoji}/>
+                {emoji_src.current.map((emoji) => (
+                    <img 
+                        src={emoji} 
+                        alt="emoji"
+                        
+                    />
+                ))}
             </div>
             <Link to='../../MenuPage' state={{name:data.name,num:data.num,toWhere:data.toWhere,distance:data.distance}} style={{ textDecoration: "none"}}>
                 <Button content={"편지 닫기"} margin="5% auto"/>
