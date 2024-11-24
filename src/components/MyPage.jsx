@@ -64,10 +64,10 @@ function MyPage() {
 
     useEffect(() => {
         if(selectedId) {
-            const selectedPost = posts.find(post => post.text_id === selectedId);
+            const selectedPost = posts.find(post => post.textId === selectedId);
             if(selectedPost) {
-                setTitle(selectedPost.title);
-                setContent(selectedPost.content);
+                setTitle(selectedPost.title)
+                setContent(selectedPost.content)
             }
         }
     }, [selectedId, posts])
