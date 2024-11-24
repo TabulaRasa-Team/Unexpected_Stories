@@ -9,10 +9,19 @@ import tear_emoji from '../images/tear_emoji.svg'
 import Button from './Button'
 
 const ReadStory = () => {
+    const server = process.env.REACT_APP_SERVER
     const [textId, setTextId] = useState('')
     const location = useLocation()
     const data = location.state
     const emoji_src = useRef([happy_emoji, tear_emoji, kiss_emoji])
+
+    const doEmpathy = async (empathy) => {
+        try {
+            await axios.patch(`${server}/board/${empathy}/${textId}`)
+        } catch(error) {
+            console.error('Error : ', error)
+        }
+    }
 
     return (
         <div className='bg-container'>
@@ -22,7 +31,11 @@ const ReadStory = () => {
                     <img 
                         src={emoji} 
                         alt="emoji"
-                        
+                        onClick={() => {
+                            if(emoji.includes('happy')) doEmpathy('like')
+                            else if(emoji.includes('tear')) doEmpathy('sad')
+                            else doEmpathy('love')
+                        }}
                     />
                 ))}
             </div>
