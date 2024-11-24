@@ -1,4 +1,4 @@
-import {React, useRef, useState} from 'react';
+import {React, useRef, useState, useEffect} from 'react';
 import axios from 'axios'
 import { Link, useLocation } from 'react-router-dom'
 import '../style/ReadStory.css'
@@ -14,6 +14,22 @@ const ReadStory = () => {
     const location = useLocation()
     const data = location.state
     const emoji_src = useRef([happy_emoji, tear_emoji, kiss_emoji])
+
+    useEffect(() => {
+        if(localStorage.getItem(`view_${textId}`) !== 'true' && textId) {
+            localStorage.setItem(`view_${textId}`, 'true')
+
+            const viewPost = async () => {
+                try {
+                    await axios.patch(`${server}/board/view/${textId}`)
+                } catch(error) {
+                    console.error("Error : ", error)
+                }
+            }
+
+            viewPost()
+        }
+    }, [textId])
 
     const doEmpathy = async (empathy) => {
         try {
