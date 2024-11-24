@@ -15,22 +15,6 @@ const ReadStory = () => {
     const data = location.state
     const emoji_src = useRef([happy_emoji, tear_emoji, kiss_emoji])
 
-    useEffect(() => {
-        if(localStorage.getItem(`view_${textId}`) !== 'true' && textId) {
-            localStorage.setItem(`view_${textId}`, 'true')
-
-            const viewPost = async () => {
-                try {
-                    await axios.patch(`${server}/board/view/${textId}`)
-                } catch(error) {
-                    console.error("Error : ", error)
-                }
-            }
-
-            viewPost()
-        }
-    }, [textId])
-
     const doEmpathy = async (empathy) => {
         try {
             await axios.patch(`${server}/board/${empathy}/${textId}`)
@@ -48,9 +32,15 @@ const ReadStory = () => {
                         src={emoji} 
                         alt="emoji"
                         onClick={() => {
-                            if(emoji.includes('happy')) doEmpathy('like')
-                            else if(emoji.includes('tear')) doEmpathy('sad')
-                            else doEmpathy('love')
+                            let empathy
+                            if(emoji.includes('happy')) empathy = 'like'
+                            else if(emoji.includes('tear')) empathy = 'sad'
+                            else empathy = 'love'
+
+                            if(localStorage.getItem(`empathy_${textId}`) !== 'true') {
+                                doEmpathy(empathy)
+                                localStorage.setItem(`empathy_${textId}`, 'true')
+                            }
                         }}
                     />
                 ))}
