@@ -2,14 +2,10 @@ import React, { useEffect, useState } from 'react';
 import '../style/MainTitle.css';
 import { Link } from 'react-router-dom';
 
-function MainPage() {
+function MainPage({setLatitude, setLongitude}) {
     const [visible, setVisible] = useState(false);
     useEffect(() => {
         setVisible(true);
-
-        navigator.geolocation.getCurrentPosition((position) => {
-            alert(position.coords.latitude)
-        })
     }, []);
 
     return (

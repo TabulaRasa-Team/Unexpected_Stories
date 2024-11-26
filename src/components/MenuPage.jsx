@@ -16,22 +16,19 @@ const MenuPage = () => {
             </div>
             <div className='contents'>
                 <Link to="../ChoiceBusStop" style={{ textDecoration: "none" }}>
-                    <div className='busStop busStop2'>
-                        <div>
-                            <span>{data.name}</span><br />
-                            <span className='info'>{data.num}   |   {data.toWhere}</span>
-                        </div>
-                        <span className='distance'>{data.distance}M</span>
-                    </div>
+                <div className='busStop busStop2'>
+                    <span className="bustStopName">{data.bus_stop}</span>
+                    <span className='distance'>{data.distance}m</span>
+                </div>
                 </Link>
                 <div className='btnDiv'>
-                    <Link to="../ReadStoryBackground" state={{ name: data.name, num: data.num, toWhere: data.toWhere, distance: data.distance }} style={{ textDecoration: "none" }}>
+                    <Link to="../ReadStoryBackground" state={{ bus_stop:data.bus_stop, distance:data.distance }} style={{ textDecoration: "none" }}>
                         <button className='menuBtn'>편지 읽기</button>
                     </Link>
-                    <Link to="../WriteStory" state={{ name: data.name, num: data.num, toWhere: data.toWhere, distance: data.distance }} style={{ textDecoration: "none" }}>
+                    <Link to="../WriteStory" state={{ bus_stop:data.bus_stop, distance:data.distance }} style={{ textDecoration: "none" }}>
                         <button className='menuBtn'>편지 쓰기</button>
                     </Link>
-                    <Link to="../MyPageBackground/Mypage" state={{ name: data.name, num: data.num, toWhere: data.toWhere, distance: data.distance }} style={{ textDecoration: "none" }}>
+                    <Link to="../MyPageBackground/Mypage" bus_stop={{ name:data.bus_stop, distance:data.distance }} style={{ textDecoration: "none" }}>
                         <button className='menuBtn'>마이 페이지</button>
                     </Link>
                 </div>
