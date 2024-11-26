@@ -33,4 +33,14 @@ span {
     text-align: center;
     margin: 0 auto;
     margin-top: 2.4em;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.reload:hover{
+    background-color: #cfcece4d;
+}
+
+.reload:active{
+    background-color: #b1b1b133; 
+    transform: scale(0.98);
 }

@@ -23,4 +23,15 @@
     z-index : 1000;
     border : none;
     font-family: "더잠실1";
+    transition: background-color 0.2s, transform 0.1s;
 }
+
+
+.Button:hover {
+    background-color: #e2e2e24d;
+  }
+  
+  .Button:active {
+    background-color: #c5c5c5b8; 
+    transform: scale(0.95);
+  }
