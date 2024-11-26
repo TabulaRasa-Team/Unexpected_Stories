@@ -6,7 +6,12 @@ function MainPage() {
     const [visible, setVisible] = useState(false);
     useEffect(() => {
         setVisible(true);
+
+        navigator.geolocation.getCurrentPosition((position) => {
+            alert(position.coords.latitude)
+        })
     }, []);
+
     return (
         <div>
             <div className='night'>
