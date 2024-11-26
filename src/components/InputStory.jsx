@@ -4,7 +4,7 @@ import '../style/inputStory.css'
 import ai_reco from '../images/ai_reco.svg'
 import del_pic from '../images/del.svg'
 
-const InputStory = ({use, selected, title, setTitle, content, setContent, onClick}) => {
+const InputStory = ({use, selected, title, setTitle, content, setContent, date, onClick}) => {
     const [opacity, setOpacity] = useState(0)
 
     const dummy = [
@@ -54,8 +54,10 @@ const InputStory = ({use, selected, title, setTitle, content, setContent, onClic
                 placeholder="제목.."
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
+                style={{ marginBottom: selected ? '-6%' : '0' }}
             />
-            <hr/>
+            {selected ? <h4 className='input_date'>{date.slice(0, 4)}년 {date.slice(5, 7)}월 {date.slice(8, 10)}일</h4>:<></>}
+            <hr/> 
             <textarea
                 className="inputContent"
                 type="text" 
