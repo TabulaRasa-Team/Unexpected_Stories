@@ -1,45 +1,59 @@
 @import url(./Font.css);
 
 *{
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
-.busStop{
+
+.busStop {
     background-color: #ffffff33;
     border-radius: 0.5em;
-    padding:6%;
-    display : flex;
+    padding: 6%;
+    display: flex;
     align-items: center;
     justify-content: space-between;
-    height : 2.2vh;
+    height: 2.2vh;
+    transition: background-color 0.2s, transform 0.1s;
 }
-.busStop > span{
+
+.busStop:hover {
+    background-color: #cfcece4d;
+}
+
+.busStop:active {
+    background-color: #b1b1b133;
+    transform: scale(0.98);
+}
+
+.busStop span {
     color: white;
-    font-size : 1.2rem;
+    font-size: 1.2rem;
 }
+
 .bustStopName {
     font-family: '더잠실3';
 }
-ul{
+
+ul {
     list-style: none;
     width: 85%;
-    margin:0 auto;
-} 
+    margin: 0 auto;
+}
 
-li{
+li {
     margin-top: 1.5em;
 }
 
-.info{
+.info {
     font-size: x-small;
 }
 
-.distance{
+.distance {
     display: block;
     font-family: '더잠실2';
 }
 
-.title{
+.title {
     color: white;
     font-family: '더잠실2';
 }
