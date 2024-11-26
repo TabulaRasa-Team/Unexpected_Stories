@@ -1,3 +1,5 @@
+import { React, useState, useEffect } from 'react'
+import axios from 'axios'
 import '../style/App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import BusStopBackground from './BusStopBackground';
@@ -11,13 +13,36 @@ import ReadStoryBackground from './ReadStoryBackground';
 import ReadStory from './ReadStory';
 
 function App() {
+  const server = process.env.REACT_APP_PYTHON
+  const [latitude, setLatitude] = useState('')
+  const [longitude, setLongitude] = useState('')
+
+  const findBusStop = async () => {
+    try {
+      const response = await axios.post(`${server}/nearest_bus_stops`, {
+        latitude,
+        longitude
+      })
+
+      console.log(response)
+    } catch(error) {
+      console.error("Error : ", error)
+    }
+  }
+
+  useEffect(() => {
+    if(latitude && longitude) {
+      findBusStop()
+    }
+  }, [latitude && longitude])
+  
   return (
     <>
       <BusStopBackground />
       <BrowserRouter>
         <Routes>
           <Route path='/WriteStory' element={<WriteStory />} />
-          <Route path='/' element={<MainTitle />} />
+          <Route path='/' element={<MainTitle setLatitude={setLatitude} setLongitude={setLongitude}/>} />
           <Route path='/ChoiceBusStop' element={<ChoiceBusStop />} />
           <Route path='/MenuPage' element={<MenuPage />} />
           <Route path='/MyPageBackground' element={<MyPageBackground />}>
