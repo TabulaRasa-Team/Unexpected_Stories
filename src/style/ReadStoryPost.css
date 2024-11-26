@@ -5,7 +5,7 @@
     flex-direction : column;
     gap : 4%;
     box-sizing : border-box;
-    width : 76%;
+    width : 82%;
     height : 60%;
     margin : 14% auto;
     margin-top : 2%;
@@ -17,7 +17,7 @@
 .read_location {
     display : flex;
     gap : 2%;
-    margin-left : 12.5%;
+    margin-left : 9.4%;
     margin-top : 14%;
 }
 
