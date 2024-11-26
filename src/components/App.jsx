@@ -31,6 +31,9 @@ function App() {
     }
   }
   
+  useEffect(() => {
+    if(latitude && longitude) findBusStop()
+  }, [latitude && longitude])
   return (
     <>
       <BusStopBackground />
