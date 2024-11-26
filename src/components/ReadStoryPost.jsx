@@ -1,7 +1,7 @@
 import {React, useState, useEffect} from 'react';
 import axios from 'axios'
 import '../style/ReadStoryPost.css'
-import speaker from '../images/speaker.png'
+import tts from '../images/tts.svg'
 import location_pic from '../images/location.svg'
 
 const ReadStoryPost = ({setTextId}) => {
@@ -44,7 +44,7 @@ const ReadStoryPost = ({setTextId}) => {
                 <span className='readContent'>{content}</span>
                 <footer className='readFooter'>
                     <div>
-                        <img src={speaker} onClick={() => {
+                        <img src={tts} onClick={() => {
                             window.responsiveVoice.speak(title + "." + content, "Korean Male", {
                                 rate : 0.8
                             });
