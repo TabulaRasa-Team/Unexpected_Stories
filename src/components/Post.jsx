@@ -61,7 +61,7 @@ const Post = ({data, isSelected, selectedId, onClick}, key) => {
                 <div className='article'>
                     <div className='articleFront'>
                         <h4 className='articleTitle'>{data.title}</h4>
-                        <span className='content'>{data.content}</span>
+                        <span className='content'>{data.busStop}에서 작성</span>
                     </div>
                     <div className='articleBack'>
                         <div className='articleItem'>
