@@ -1,46 +1,36 @@
-import React from 'react';
+import {React, useEffect} from 'react';
 import ListBusStop from './ListBusStop';
 import '../style/ChoiceBusStop.css';
-import { Link } from 'react-router-dom';
 
-function ChoiceBusStop() {
+function ChoiceBusStop({bus_stops, findBusStop, setLatitude, setLongitude}) {
+    
+    const handleReload = () => {
+        navigator.geolocation.getCurrentPosition((position) => {
+            setLatitude(position.coords.latitude)
+            setLongitude(position.coords.longitude)
+        })
 
-    let BusStopDummy = [
-        {
-            id: 1,
-            name: "삼성화재연수원",
-            num: "41710, 41730",
-            toWhere: "신협연수원",
-            distance: 267
-        },
-        {
-            id: 2,
-            name: "한밭대학교",
-            num: "41680, 41690",
-            toWhere: "수통골삼거리",
-            distance: 314
-        },
-        {
-            id: 3,
-            name: "수통골입구",
-            num: "45770, 45760",
-            toWhere: "한밭대학교",
-            distance: 493
-        }
-    ];
+        findBusStop()
+    }
+
+    useEffect(() => {
+        handleReload()
+    }, [])
+
     return (
         <div>
             <span className='title'>
                     어느 정류장의 이야기를 해볼까?
             </span>
+            <span className="small_title">
+                    근처 500m 내 정류장만 표시돼요
+            </span>
             <ul>
-                {BusStopDummy.map((item) => (
-                    <ListBusStop BusStop={item} key={item.id} />
+                {bus_stops.map((item) => (
+                    <ListBusStop BusStop={item}/>
                 ))}
             </ul>
-            <Link to="/ChoiceBusStop" style={{ textDecoration: "none" }} >
-                <button className='reload'>새로고침</button>
-            </Link>
+            <button className='reload' onClick={handleReload}>새로고침</button>
         </div>
     );
 };

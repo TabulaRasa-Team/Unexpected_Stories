@@ -1,17 +1,17 @@
-import React from 'react';
+import {React} from 'react';
 import '../style/ListBusStop.css';
 import { Link } from 'react-router-dom';
 
 function ListBusStop({ BusStop }) {
+    const bus_stop = BusStop[1].substring(11)
+    const distance = BusStop[2].substring(11)
+
     return (
-        <Link to="/MenuPage" state={{name:BusStop.name,num:BusStop.num,toWhere:BusStop.toWhere,distance:BusStop.distance}} style={{ textDecoration: "none"}}>
+        <Link to="/MenuPage" state={{bus_stop:bus_stop, distance:distance}} style={{ textDecoration: "none"}}>
             <li>
                 <div className='busStop'>
-                    <div>
-                        <span>{BusStop.name}</span><br />
-                        <span className='info'>{BusStop.num}   |   {BusStop.toWhere} 방면</span>
-                    </div>
-                    <span className='distance'>{BusStop.distance}M</span>
+                    <span className="bustStopName">{bus_stop}</span>
+                    <span className='distance'>{distance}m</span>
                 </div>
             </li>
         </Link>

@@ -16,25 +16,20 @@ function App() {
   const server = process.env.REACT_APP_PYTHON
   const [latitude, setLatitude] = useState('')
   const [longitude, setLongitude] = useState('')
+  const [bus_stops, setBus_stops] = useState([])
 
   const findBusStop = async () => {
     try {
-      const response = await axios.post(`${server}/nearest_bus_stops`, {
+      const response = await axios.post(`${server}/nearest_bus_stops/`, {
         latitude,
         longitude
       })
 
-      console.log(response)
+      setBus_stops(response.data.bus_stops)
     } catch(error) {
       console.error("Error : ", error)
     }
   }
-
-  useEffect(() => {
-    if(latitude && longitude) {
-      findBusStop()
-    }
-  }, [latitude && longitude])
   
   return (
     <>
@@ -43,7 +38,7 @@ function App() {
         <Routes>
           <Route path='/WriteStory' element={<WriteStory />} />
           <Route path='/' element={<MainTitle setLatitude={setLatitude} setLongitude={setLongitude}/>} />
-          <Route path='/ChoiceBusStop' element={<ChoiceBusStop />} />
+          <Route path='/ChoiceBusStop' element={<ChoiceBusStop bus_stops={bus_stops} findBusStop={findBusStop} setLatitude={setLatitude} setLongitude={setLongitude}/>} />
           <Route path='/MenuPage' element={<MenuPage />} />
           <Route path='/MyPageBackground' element={<MyPageBackground />}>
             <Route path='MyPage' element={<MyPage />} />
