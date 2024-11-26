@@ -7,13 +7,18 @@
 .busStop{
     background-color: #ffffff33;
     border-radius: 0.5em;
-    padding:3.5%;
-    display: flex;
+    padding:6%;
+    display : flex;
+    align-items: center;
     justify-content: space-between;
+    height : 2.2vh;
 }
-.busStop span{
+.busStop > span{
     color: white;
-    font-family: '더잠실2';
+    font-size : 1.2rem;
+}
+.bustStopName {
+    font-family: '더잠실3';
 }
 ul{
     list-style: none;
@@ -31,8 +36,7 @@ li{
 
 .distance{
     display: block;
-    margin: auto 0;
-    padding-right: 0.5em;
+    font-family: '더잠실2';
 }
 
 .title{
