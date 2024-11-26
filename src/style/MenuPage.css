@@ -1,64 +1,74 @@
 @import './Font.css';
 
-.BackgroundContainer{
-    position:fixed;
-    height:100vh;
+.BackgroundContainer {
+    position: fixed;
+    height: 100vh;
     width: 100vw;
     max-width: 430px;
     max-height: 932px;
     overflow: hidden;
     background-color: #05091099;
     backdrop-filter: blur(6px);
-	-webkit-backdrop-filter: blur(6px);
-	transform: translate3d(0, 0, 0);
+    -webkit-backdrop-filter: blur(6px);
+    transform: translate3d(0, 0, 0);
     overflow-y: scroll;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
 }
 
-.MainTitle{
-    margin-top:15%;
+.MainTitle {
+    margin-top: 15%;
     text-align: center;
-    color:white;
+    color: white;
     font-family: '별빛하늘L';
     font-weight: 100;
     font-size: 265%;
 }
 
-.paperPlane{
+.paperPlane {
     width: 100%;
     height: 100%;
 }
 
-.paperPlaneDiv{
+.paperPlaneDiv {
     margin: 15% auto 10% auto;
     width: 80%;
     height: 27%;
 }
 
-.busStop2{
+.busStop2 {
     width: 75%;
-    margin:0 auto;
+    margin: 0 auto;
 }
 
-.menuBtn{
+.menuBtn {
     display: block;
     margin: 0 auto;
-    background-color:#ffffff4d;
-    border:none;
+    background-color: #ffffff4d;
+    border: none;
     color: white;
     font-family: '더잠실2';
     width: 80%;
     height: 82%;
     font-size: calc(1.3em - 5%);
     border-radius: 1.2em;
+    transition: background-color 0.2s, transform 0.1s;
 }
 
-.contents{
+.menuBtn:hover {
+    background-color: #a4a3a34d;
+}
+
+.menuBtn:active {
+    background-color: #767676b8;
+    transform: scale(0.95);
+}
+
+.contents {
     margin-bottom: 30%;
 }
 
-.btnDiv{
+.btnDiv {
     display: grid;
     grid-auto-flow: row;
     height: 28vh;

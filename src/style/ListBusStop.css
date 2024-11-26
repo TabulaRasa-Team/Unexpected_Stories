@@ -10,7 +10,18 @@
     padding:3.5%;
     display: flex;
     justify-content: space-between;
+    transition: background-color 0.2s, transform 0.1s;
 }
+
+.busStop:hover{
+    background-color: #cfcece4d;
+}
+
+.busStop:active{
+    background-color: #b1b1b133; 
+    transform: scale(0.98);
+}
+
 .busStop span{
     color: white;
     font-family: '더잠실2';
