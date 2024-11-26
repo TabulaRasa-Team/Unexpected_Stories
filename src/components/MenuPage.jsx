@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const MenuPage = () => {
     const location = useLocation();
-    const data = location.state;
+    const data = location.state || {}
 
     return (
         <div className='BackgroundContainer'>
@@ -28,7 +28,7 @@ const MenuPage = () => {
                     <Link to="../WriteStory" state={{ bus_stop:data.bus_stop, distance:data.distance }} style={{ textDecoration: "none" }}>
                         <button className='menuBtn'>편지 쓰기</button>
                     </Link>
-                    <Link to="../MyPageBackground/Mypage" bus_stop={{ name:data.bus_stop, distance:data.distance }} style={{ textDecoration: "none" }}>
+                    <Link to="../MyPageBackground/Mypage" state={{ bus_stop:data.bus_stop, distance:data.distance }} style={{ textDecoration: "none" }}>
                         <button className='menuBtn'>마이 페이지</button>
                     </Link>
                 </div>

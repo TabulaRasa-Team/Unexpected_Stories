@@ -13,9 +13,7 @@ const ReadStoryBackground = () => {
         const timer = setTimeout(() => {
             navigate('ReadStory', {
                 state: {
-                    name: data.name,
-                    num: data.num,
-                    toWhere: data.toWhere,
+                    bus_stop: data.bus_stop,
                     distance: data.distance
                 }
             });
