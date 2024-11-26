@@ -15,7 +15,7 @@ const WriteStory = () => {
     const location = useLocation();
     const nav = useNavigate()
     const data = location.state;
-    const [busStop, setBusStop] = useState(data.name)
+    const [busStop, setBusStop] = useState(data.bus_stop)
 
     const writePost = async () => {
         try {
@@ -30,9 +30,7 @@ const WriteStory = () => {
             alert("소중한 이야기 감사합니다")
             nav('/MenuPage', {
                 state: {
-                    name: data.name,
-                    num: data.num,
-                    toWhere: data.toWhere,
+                    bus_stop: data.bus_stop,
                     distance: data.distance
                 }
             })
