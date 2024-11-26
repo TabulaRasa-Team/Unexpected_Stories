@@ -43,7 +43,7 @@ const WriteStory = () => {
     
     return (
         <div className="WriteBackground">
-            <Link to='../MenuPage' state={{name:data.name,num:data.num,toWhere:data.toWhere,distance:data.distance}} style={{ textDecoration: "none"}}>
+            <Link to='../MenuPage' state={{ bus_stop:data.bus_stop, distance:data.distance }} style={{ textDecoration: "none"}}>
             <img src={backIcon} alt="back" className="back"/>
             </Link>
             <InputStory 

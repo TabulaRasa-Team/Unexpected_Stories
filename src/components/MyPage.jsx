@@ -148,10 +148,8 @@ function MyPage() {
                         if(!selected) {
                             nav('../../MenuPage', {
                                 state: {
-                                    name: data.name,
-                                    num: data.num,
-                                    toWhere: data.toWhere,
-                                    distance: data.distance,
+                                    bus_stop: data.bus_stop,
+                                    distance: data.distance
                                 },
                             })
                         }
