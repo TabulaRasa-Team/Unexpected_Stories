@@ -16,11 +16,11 @@ function MyPage() {
     const [selectedId, setSelectedId] = useState(false)
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
+    const [date, setDate] = useState('')
     const [reversePosts, setRever] = useState([])
     
     useEffect(() => {
         setRever(posts.reverse())
-        console.log(reversePosts)
     }, [posts])
 
     const postUpdate = async () => {
@@ -36,10 +36,8 @@ function MyPage() {
         alert("수정에 성공하였습니다")
         nav('../../MenuPage', {
             state: {
-                name: data.name,
-                num: data.num,
-                toWhere: data.toWhere,
-                distance: data.distance,
+                bus_stop: data.bus_stop,
+                distance: data.distance
             },
         })
     }
@@ -54,10 +52,8 @@ function MyPage() {
         alert("글이 삭제되었습니다")
         nav('../../MenuPage', {
             state: {
-                name: data.name,
-                num: data.num,
-                toWhere: data.toWhere,
-                distance: data.distance,
+                bus_stop: data.bus_stop,
+                distance: data.distance
             },
         })
     }
@@ -123,6 +119,7 @@ function MyPage() {
                         onClick={() => {
                             setSelectedId(item.textId)
                             setSelected(true)
+                            setDate(item.date)
                         }}
                         isSelected={selected}
                         selectedId={selectedId == item.textId ? selectedId : false}
@@ -135,6 +132,7 @@ function MyPage() {
                 selected={selected}
                 title={title}
                 content={content}
+                date={date}
                 setTitle={setTitle}
                 setContent={setContent}
                 onClick={() => {
