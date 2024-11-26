@@ -6,6 +6,11 @@ function MainPage({setLatitude, setLongitude}) {
     const [visible, setVisible] = useState(false);
     useEffect(() => {
         setVisible(true);
+
+        navigator.geolocation.getCurrentPosition((position) => {
+            setLatitude(position.coords.latitude)
+            setLongitude(position.coords.longitude)
+        })
     }, []);
 
     return (
