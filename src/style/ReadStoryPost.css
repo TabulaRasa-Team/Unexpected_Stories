@@ -8,11 +8,23 @@
     width : 70%;
     height : 60%;
     margin : 14% auto;
+    margin-top : 2%;
     background-color : #FFFFFF4D;
     border-radius : 1rem;
     padding : 6% 6% 2%;
 }
 
+.read_location {
+    display : flex;
+    gap : 2%;
+    margin-left : 15%;
+    margin-top : 14%;
+}
+
+.read_location > h3 {
+    color : white;
+    font-family: '더잠실2';
+}
 .readTitle {
     border : none;
     background-color: transparent;
@@ -44,6 +56,7 @@
 
 .readFooter > div > img{
     margin-right: 0.8rem;
+    margin-bottom : 0.6rem;
 }
 
 .readFooter > h4{
