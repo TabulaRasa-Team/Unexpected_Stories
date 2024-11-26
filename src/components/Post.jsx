@@ -1,80 +1,55 @@
-import {React, useState, useEffect, useRef} from 'react';
-import '../style/Post.css'
-import favorite from '../images/Favorite_light.svg'
-import view from '../images/Eye_light.svg'
+import { React, useRef, useState, useEffect } from 'react';
+import '../style/Post.css';
+import favorite from '../images/Favorite_light.svg';
+import view from '../images/Eye_light.svg';
 
-const Post = ({data, isSelected, selectedId, onClick}, key) => {
-    const [opacity, setOpacity] = useState(1)
-    const [move, setMove] = useState(0)
-    const position = useRef(0)
-
-    let cssEffectStyle = {
-        opacity: opacity,
-        transform: `translateY(${move}px)`,
-        ...(selectedId && {
-            position : 'absolute',
-            width : '100%'
-        })
-    }
-    
-    const cssEffect = () => {
-        if(!selectedId) {
-            const fadeOut = setInterval(() => {
-                setOpacity((prev) => {
-                    if(prev <= 0) {
-                        clearInterval(fadeOut)
-                        return 0
-                    }
-
-                    return prev - 0.1
-                })
-            }, 40)
-        } else if(position.current) {
-            const coordinate_Y = position.current.getBoundingClientRect().top
-            const moveDistance = 40 - coordinate_Y
-
-            const moveUp = setInterval(() => {
-                setMove((prev) => {
-                    if(prev <= moveDistance) {
-                        clearInterval(moveUp)
-                        return moveDistance
-                    }
-
-                    return prev - 1.8
-                }, 10)
-            })
-
-            cssEffectStyle = {
-                top : moveDistance
-            }
-        }
-    }
+const Post = ({ data, isSelected, selectedId, onClick }) => {
+    const position = useRef(null);
+    const [topPosition, setTopPosition] = useState("100%");
 
     useEffect(() => {
-        if(isSelected) cssEffect()
-    }, [isSelected])
+        if (selectedId === data.textId) {
+            setTimeout(() => setTopPosition("4%"), 50); 
+        } else if (!isSelected) {
+            setTopPosition("50%");
+        }
+    }, [selectedId, data.textId, isSelected]);
+
+    const cssEffectStyle = {
+        display: selectedId === data.textId || !isSelected ? "block" : "none",
+        position: selectedId === data.textId ? "absolute" : "relative",
+        top: selectedId === data.textId ? topPosition : "initial",
+        width: "100%",
+        transition: "top 0.5s ease-in-out", 
+    };
 
     return (
         <li ref={position} onClick={onClick} style={cssEffectStyle}>
             <div>
-                {!selectedId && <h3 className='date' >{data.date.slice(2, 4)}년 {data.date.slice(5, 7)}월 {data.date.slice(8, 10)}일</h3>}
-                <div className='article'>
-                    <div className='articleFront'>
-                        <h4 className='articleTitle'>{data.title}</h4>
-                        <span className='content'>{data.content}</span>
+                {!selectedId && (
+                    <h3 className="date">
+                        {data.date.slice(2, 4)}년 {data.date.slice(5, 7)}월 {data.date.slice(8, 10)}일
+                    </h3>
+                )}
+                <div className="article">
+                    <div className="articleFront">
+                        <h4 className="articleTitle">{data.title}</h4>
+                        <span className="content">{data.content}</span>
                     </div>
-                    <div className='articleBack'>
-                        <div className='articleItem'>
-                            <img src={favorite} alt="좋아요" /><div> {data.like + data.love + data.sad}</div>
+                    <div className="articleBack">
+                        <div className="articleItem">
+                            <img src={favorite} alt="좋아요" />
+                            <div> {data.like + data.love + data.sad}</div>
                         </div>
-                        <div className='articleItem'>
-                            <img src={view} alt="조회수" /><div> {data.view}</div>
+                        <div className="articleItem">
+                            <img src={view} alt="조회수" />
+                            <div> {data.view}</div>
                         </div>
                     </div>
                 </div>
             </div>
         </li>
-    )
-}
+    );
+};
 
 export default Post;

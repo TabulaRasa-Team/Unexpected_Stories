@@ -1,4 +1,4 @@
-import {React, useState, useEffect} from 'react';
+import { React, useState, useEffect } from 'react';
 import axios from 'axios'
 import '../style/MyPage.css';
 import Post from './Post';
@@ -17,7 +17,7 @@ function MyPage() {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [reversePosts, setRever] = useState([])
-    
+
     useEffect(() => {
         setRever(posts.reverse())
         console.log(reversePosts)
@@ -29,7 +29,7 @@ function MyPage() {
                 title,
                 content
             })
-        } catch(error) {
+        } catch (error) {
             console.error("Error : ", error)
         }
 
@@ -47,7 +47,7 @@ function MyPage() {
     const postDelete = async () => {
         try {
             await axios.delete(`${server}/board/${selectedId}`)
-        } catch(error) {
+        } catch (error) {
             console.error("Error : ", error)
         }
 
@@ -63,9 +63,9 @@ function MyPage() {
     }
 
     useEffect(() => {
-        if(selectedId) {
+        if (selectedId) {
             const selectedPost = posts.find(post => post.textId === selectedId);
-            if(selectedPost) {
+            if (selectedPost) {
                 setTitle(selectedPost.title)
                 setContent(selectedPost.content)
             }
@@ -74,10 +74,10 @@ function MyPage() {
 
     useEffect(() => {
         const getAll = async () => {
-            try {   
+            try {
                 const response = await axios.get(`${server}/board`)
                 setPosts(response.data)
-            } catch(error) {
+            } catch (error) {
                 console.error("Error", error)
             }
         }
@@ -90,62 +90,68 @@ function MyPage() {
     const cssEffect = () => {
         const fadeOut = setInterval(() => {
             setOpacity((prev) => {
-                if(prev <= 0) {
+                if (prev <= 0) {
                     clearInterval(fadeOut)
                     return 0
                 }
-    
+
                 return prev - 0.1
             })
         }, 40)
     }
 
     useEffect(() => {
-        if(selected) cssEffect()
-    }, [selected]) 
+        if (selected) cssEffect()
+    }, [selected])
 
     const cssPostList = {
         ...(!selected && {
-            overflowY : 'scroll',
-            msOverflowStyle : 'none',
-            scrollbarWidth: 'none'
+            overflowY: 'scroll',
+            msOverflowStyle: 'none',
+            scrollbarWidth: 'none',
+            outline: 'none',
         })
     }
-
+    
+    
     return (
         <>
-            <h1 className='MyPageMainTitle' style={{opacity : opacity}}>내가 공유한 이야기</h1>
+            <h1 className='MyPageMainTitle' style={{ opacity: opacity }}>내가 공유한 이야기</h1>
             <ul className='PostList' style={cssPostList}>
                 {reversePosts.map((item) => (
-                    <Post 
+                    <Post
                         data={item}
-                        key={item.textId-1}
+                        key={item.textId - 1}
+                        style={{
+                            display: selectedId === item.textId || !selected ? "block" : "none",
+                        }}
                         onClick={() => {
-                            setSelectedId(item.textId)
-                            setSelected(true)
+                            setSelectedId(item.textId);
+                            setSelected(true);
                         }}
                         isSelected={selected}
-                        selectedId={selectedId == item.textId ? selectedId : false}
+                        selectedId={selectedId === item.textId ? selectedId : false}
                     />
                 ))}
             </ul>
-            {selected && 
-            <InputStory 
-                use={"modify"} 
-                selected={selected}
-                title={title}
-                content={content}
-                setTitle={setTitle}
-                setContent={setContent}
-                onClick={() => {
-                    if(window.confirm("정말 삭제하시겠습니까?")) postDelete()
-                }}
-            />}
+
+            {selected &&
+                <InputStory
+                    use={"modify"}
+                    selected={selected}
+                    title={title}
+                    content={content}
+                    setTitle={setTitle}
+                    setContent={setContent}
+                    onClick={() => {
+                        if (window.confirm("정말 삭제하시겠습니까?")) postDelete()
+                    }}
+                />}
             <div className="buttonContainer">
-                <Button 
+                <Button
                     content={selected ? "수정 완료!" : "뒤로가기"}
                     onClick={() => {
-                        if(!selected) {
+                        if (!selected) {
                             nav('../../MenuPage', {
                                 state: {
                                     name: data.name,
@@ -155,7 +161,7 @@ function MyPage() {
                                 },
                             })
                         }
-                        else if(title.length < 1 || content.length < 1 ) alert("공백은 입력하실 수 없습니다")
+                        else if (title.length < 1 || content.length < 1) alert("공백은 입력하실 수 없습니다")
                         else postUpdate()
                     }}
                 />
