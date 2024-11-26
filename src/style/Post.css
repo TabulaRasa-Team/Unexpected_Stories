@@ -22,7 +22,7 @@ li {
     height: 4em;
     justify-content: space-between;
     border-radius: 10px;
-    padding-left:0.8em;
+    padding-left : 1em;
     align-items: center;
 }
 
@@ -36,7 +36,7 @@ li {
     width: 98%;
     height: 20px;
     font-size: 0.8em;
-    margin-left: 0.8em;
+    margin-left: 0.6em;
 }
 
 .articleFront{
@@ -57,7 +57,7 @@ li {
     width: 50%;
     height: 100%;
     font-size: 0.8em;
-    margin-right: 1em;
+    margin-right: 1.4em;
 }
 
 .articleTitle{
